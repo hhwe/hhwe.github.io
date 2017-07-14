@@ -61,14 +61,12 @@ JavaScript是一种属于网络的脚本语言,已经被广泛用于Web应用开
 
 ### JS实现
 
-HTML 中的脚本必须位于 <script> 与 </script> 标签之间。
-脚本可被放置在 HTML 页面的 <body> 和 <head> 部分中。
-（最好放在body底部）
+HTML 中的脚本必须位于 `<script>` 与 `</script>` 标签之间。
+脚本可被放置在 HTML 页面的 `<body>` 和 `<head>` 部分中。（最好放在body底部）
 
 ---
 
 <h1 id="2.0">快速入门</h1>
-
 
 
 <h2 id="2.1">基本语法</h2>
