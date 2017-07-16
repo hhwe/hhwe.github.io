@@ -1,5 +1,5 @@
 ---
-title: 2017-07-15-JavaScript-Tutorial
+title: JavaScript-对象
 date: 2017-07-15 08:29:32
 categories: JS
 tags: 
@@ -37,8 +37,6 @@ tags:
     typeof null; // 'object'
     typeof []; // 'object'
     typeof {}; // 'object'
-
-### 包装对象
 
 number、boolean和string都有包装对象。没错，在JavaScript中，字符串也区分string类型和它的包装类型。包装对象用new创建：
 
