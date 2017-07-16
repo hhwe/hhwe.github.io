@@ -224,26 +224,85 @@ JavaScript 基于 `prototype`，而不是基于类的，JavaScript对每个创�
 
 除了直接用`{ ... }`创建一个对象外，JavaScript还可以用一种构造函数的方法来创建对象。它的用法是，先定义一个构造函数，再用关键字`new`来调用这个函数，并返回一个对象
 
-    function person(firstname,lastname,age,eyecolor)
-    {
-    this.firstname=firstname;
-    this.lastname=lastname;
-    this.age=age;
-    this.eyecolor=eyecolor;
+    function Student(name) {
+        this.name = name;
+        this.hello = function () {
+            alert('Hello, ' + this.name + '!');
+        }
     }
-    var myFather=new person("Bill","Gates",56,"blue");
-    var myMother=new person("Steve","Jobs",48,"green");
+    var xiaoming = new Student('小明');
+    xiaoming.name; // '小明'
+    xiaoming.hello(); // Hello, 小明!
 
-访问对象的属性和方法用：
+用`new Student()`创建的对象还从原型上获得了一个`constructor`属性，它指向函数Student本身
 
-    objectName.propertyName
-    objectName.methodName()
+新创建的xiaoming的原型链是：
+
+![](/images/2017-07-15-1.png)
+
+共享同一个函数可以将函数绑定到函数原型上，如`Student.prototype`:
+
+    function Student(name) {
+        this.name = name;
+    }
+
+    Student.prototype.hello = function () {
+        alert('Hello, ' + this.name + '!');
+    };
+
+![](/images/2017-07-15-2.png)
 
 ---
 
 <h2 id="5.2">原型继承</h2>
 
-我们必须借助一个中间对象来实现正确的原型链，这个中间对象的原型要指向Student.prototype。为了实现这一点，参考道爷（就是发明JSON的那个道格拉斯）的代码，中间对象可以用一个空函数F来实现：
+我们必须借助一个中间对象来实现正确的原型链，这个中间对象的原型要指向`Student.prototype`。为了实现这一点，参考道爷（就是发明JSON的那个道格拉斯）的代码，中间对象可以用一个空函数F来实现：
+
+    // PrimaryStudent构造函数:
+    function PrimaryStudent(props) {
+        Student.call(this, props);
+        this.grade = props.grade || 1;
+    }
+    // 空函数F:
+    function F() {
+    }
+    // 把F的原型指向Student.prototype:
+    F.prototype = Student.prototype;
+    // 把PrimaryStudent的原型指向一个新的F对象，F对象的原型正好指向Student.prototype:
+    PrimaryStudent.prototype = new F();
+    // 把PrimaryStudent原型的构造函数修复为PrimaryStudent:
+    PrimaryStudent.prototype.constructor = PrimaryStudent;
+    // 继续在PrimaryStudent原型（就是new F()对象）上定义方法：
+    PrimaryStudent.prototype.getGrade = function () {
+        return this.grade;
+    };
+    // 创建xiaoming:
+    var xiaoming = new PrimaryStudent({
+        name: '小明',
+        grade: 2
+    });
+    xiaoming.name; // '小明'
+    xiaoming.grade; // 2
+    // 验证原型:
+    xiaoming.__proto__ === PrimaryStudent.prototype; // true
+    xiaoming.__proto__.__proto__ === Student.prototype; // true
+
+    // 验证继承关系:
+    xiaoming instanceof PrimaryStudent; // true
+    xiaoming instanceof Student; // true
+
+原型链图：
+
+![](/images/2017-07-15-3.png)
+
+如果把继承这个动作用一个`inherits()`函数封装起来，还可以隐藏`F`的定义，并简化代码：
+
+    function inherits(Child, Parent) {
+        var F = function () {};
+        F.prototype = Parent.prototype;
+        Child.prototype = new F();
+        Child.prototype.constructor = Child;
+    }
 
 JavaScript的原型继承实现方式就是：
 
