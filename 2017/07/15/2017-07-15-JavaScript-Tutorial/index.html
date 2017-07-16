@@ -103,7 +103,7 @@
 <meta property="og:image" content="http://yoursite.com/images/2017-07-15-1.png">
 <meta property="og:image" content="http://yoursite.com/images/2017-07-15-2.png">
 <meta property="og:image" content="http://yoursite.com/images/2017-07-15-3.png">
-<meta property="og:updated_time" content="2017-07-16T03:54:40.568Z">
+<meta property="og:updated_time" content="2017-07-16T03:59:56.606Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript-对象">
 <meta name="twitter:description" content="目录 标准对象   Date RegExp JSON   面向对象编程 创建对象 原型继承 class继承     标准对象  在JavaScript的世界里，一切都是对象。 但是某些对象还是和其他对象不太一样。为了区分对象的类型，我们用typeof操作符获取对象的类型，它总是返回一个字符串： typeof 123; // &amp;apos;number&amp;apos; typeof NaN; // &amp;ap">
@@ -438,7 +438,7 @@ typeof Math.abs; // &apos;function&apos;
 typeof null; // &apos;object&apos;
 typeof []; // &apos;object&apos;
 typeof {}; // &apos;object&apos;
-</code></pre><h3 id="包装对象"><a href="#包装对象" class="headerlink" title="包装对象"></a>包装对象</h3><p>number、boolean和string都有包装对象。没错，在JavaScript中，字符串也区分string类型和它的包装类型。包装对象用new创建：</p>
+</code></pre><p>number、boolean和string都有包装对象。没错，在JavaScript中，字符串也区分string类型和它的包装类型。包装对象用new创建：</p>
 <pre><code>var n = new Number(123); // 123,生成了新的包装类型
 typeof new Number(123); // &apos;object&apos;
 var b = new Boolean(true); // true,生成了新的包装类型
@@ -896,7 +896,7 @@ Student.prototype.hello = function () {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4.0"><span class="nav-number">2.</span> <span class="nav-text">标准对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#包装对象"><span class="nav-number">2.0.1.</span> <span class="nav-text">包装对象</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4.1"><span class="nav-number">2.1.</span> <span class="nav-text">Date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4.2"><span class="nav-number">2.2.</span> <span class="nav-text">RegExp</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#贪婪匹配"><span class="nav-number">2.2.1.</span> <span class="nav-text">贪婪匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局搜索"><span class="nav-number">2.2.2.</span> <span class="nav-text">全局搜索</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4.3"><span class="nav-number">2.3.</span> <span class="nav-text">JSON</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5.0"><span class="nav-number">3.</span> <span class="nav-text">面向对象编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5.1"><span class="nav-number">3.1.</span> <span class="nav-text">创建对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5.2"><span class="nav-number">3.2.</span> <span class="nav-text">原型继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5.3"><span class="nav-number">3.3.</span> <span class="nav-text">class继承</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4.0"><span class="nav-number">2.</span> <span class="nav-text">标准对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4.1"><span class="nav-number">2.1.</span> <span class="nav-text">Date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4.2"><span class="nav-number">2.2.</span> <span class="nav-text">RegExp</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#贪婪匹配"><span class="nav-number">2.2.1.</span> <span class="nav-text">贪婪匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局搜索"><span class="nav-number">2.2.2.</span> <span class="nav-text">全局搜索</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4.3"><span class="nav-number">2.3.</span> <span class="nav-text">JSON</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5.0"><span class="nav-number">3.</span> <span class="nav-text">面向对象编程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5.1"><span class="nav-number">3.1.</span> <span class="nav-text">创建对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5.2"><span class="nav-number">3.2.</span> <span class="nav-text">原型继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5.3"><span class="nav-number">3.3.</span> <span class="nav-text">class继承</span></a></li></ol></li></ol></div>
             
 
           </div>
