@@ -93,17 +93,19 @@
 
 
 
-<meta name="description" content="浏览器 浏览器对象 操作DOM 操作表单     浏览器对象  windowwindow对象不但充当全局作用域，而且表示浏览器窗口.innerWidth和innerHeight属性，可以获取浏览器窗口的内部宽度和高outerWidth和outerHeight属性，可以获取浏览器窗口的整个宽度和高 navigatornavigator对象表示浏览器的信息，最常用的属性包括：  navigator.">
+<meta name="description" content="浏览器 浏览器对象 操作DOM 操作表单 操作文件     浏览器对象  windowwindow对象不但充当全局作用域，而且表示浏览器窗口.innerWidth和innerHeight属性，可以获取浏览器窗口的内部宽度和高outerWidth和outerHeight属性，可以获取浏览器窗口的整个宽度和高 navigatornavigator对象表示浏览器的信息，最常用的属性包括：  navig">
 <meta name="keywords" content="JS,tutorial">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript-浏览器">
 <meta property="og:url" content="http://yoursite.com/2017/07/16/2017-07-16-JavaScript-Tutorial/index.html">
 <meta property="og:site_name" content="Han&#39;s Notes">
-<meta property="og:description" content="浏览器 浏览器对象 操作DOM 操作表单     浏览器对象  windowwindow对象不但充当全局作用域，而且表示浏览器窗口.innerWidth和innerHeight属性，可以获取浏览器窗口的内部宽度和高outerWidth和outerHeight属性，可以获取浏览器窗口的整个宽度和高 navigatornavigator对象表示浏览器的信息，最常用的属性包括：  navigator.">
-<meta property="og:updated_time" content="2017-07-16T15:43:59.872Z">
+<meta property="og:description" content="浏览器 浏览器对象 操作DOM 操作表单 操作文件     浏览器对象  windowwindow对象不但充当全局作用域，而且表示浏览器窗口.innerWidth和innerHeight属性，可以获取浏览器窗口的内部宽度和高outerWidth和outerHeight属性，可以获取浏览器窗口的整个宽度和高 navigatornavigator对象表示浏览器的信息，最常用的属性包括：  navig">
+<meta property="og:image" content="http://yoursite.com/2017/07/16/2017-07-16-JavaScript-Tutorial/images/2017-07-17-1.png">
+<meta property="og:updated_time" content="2017-07-18T07:51:17.096Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript-浏览器">
-<meta name="twitter:description" content="浏览器 浏览器对象 操作DOM 操作表单     浏览器对象  windowwindow对象不但充当全局作用域，而且表示浏览器窗口.innerWidth和innerHeight属性，可以获取浏览器窗口的内部宽度和高outerWidth和outerHeight属性，可以获取浏览器窗口的整个宽度和高 navigatornavigator对象表示浏览器的信息，最常用的属性包括：  navigator.">
+<meta name="twitter:description" content="浏览器 浏览器对象 操作DOM 操作表单 操作文件     浏览器对象  windowwindow对象不但充当全局作用域，而且表示浏览器窗口.innerWidth和innerHeight属性，可以获取浏览器窗口的内部宽度和高outerWidth和outerHeight属性，可以获取浏览器窗口的整个宽度和高 navigatornavigator对象表示浏览器的信息，最常用的属性包括：  navig">
+<meta name="twitter:image" content="http://yoursite.com/2017/07/16/2017-07-16-JavaScript-Tutorial/images/2017-07-17-1.png">
 
 
 
@@ -411,6 +413,7 @@
 <li><a href="#6.1">浏览器对象</a></li>
 <li><a href="#6.2">操作DOM</a></li>
 <li><a href="#6.3">操作表单</a></li>
+<li><a href="#6.4">操作文件</a></li>
 </ul>
 </li>
 </ul>
@@ -479,6 +482,135 @@ location.hash; // &apos;TOP&apos;
 <p>如果我们要把子节点插入到指定的位置怎么办？可以使用:<br>    parentElement.insertBefore(newElement, referenceElement)</p>
 <h3 id="删除DOM"><a href="#删除DOM" class="headerlink" title="删除DOM"></a>删除DOM</h3><p>要删除一个节点，首先要获得该节点本身以及它的父节点，然后，调用父节点的<code>removeChild</code>把自己删掉：<br>    var self = document.getElementById(‘to-be-removed’);<br>    var parent = self.parentElement;<br>    var removed = parent.removeChild(self);<br>    removed === self; // true</p>
 <p>当你遍历一个父节点的子节点并进行删除操作时，要注意，<code>children</code>属性是一个只读属性，并且它在子节点变化时会实时更新</p>
+<hr>
+<h1 id="6.3">操作表单</h1>
+
+<p>用JavaScript操作表单和操作DOM是类似的，因为表单本身也是DOM树</p>
+<p>不过表单的输入框、下拉框等可以接收用户输入，所以用JavaScript来操作表单，可以获得用户输入的内容，或者对一个输入框设置新的内</p>
+<p>HTML表单的输入控件主要有以下几种：</p>
+<pre><code>文本框，对应的&lt;input type=&quot;text&quot;&gt;，用于输入文本；
+口令框，对应的&lt;input type=&quot;password&quot;&gt;，用于输入口令；
+单选框，对应的&lt;input type=&quot;radio&quot;&gt;，用于选择一项；
+复选框，对应的&lt;input type=&quot;checkbox&quot;&gt;，用于选择多项；
+下拉框，对应的&lt;select&gt;，用于选择一项；
+隐藏文本，对应的&lt;input type=&quot;hidden&quot;&gt;，用户不可见，但表单提交时会把隐藏文本发送到服务器。
+</code></pre><h3 id="修改值"><a href="#修改值" class="headerlink" title="修改值"></a>修改值</h3><p>如果我们获得了一个<code>&lt;input&gt;</code>节点的引用，就可以直接调用<code>value</code>获得对应的用户输入值。这种方式可以应用于text、password、hidden以及select。但是，对于单选框和复选框，<code>value</code>属性返回的永远是HTML预设的值，而我们需要获得的实际是用户是否“勾上了”选项，所以应该用<code>checked</code>判断</p>
+<h3 id="设置值"><a href="#设置值" class="headerlink" title="设置值"></a>设置值</h3><p>对于text、password、hidden以及select，直接设置value就可以，<br>对于单选框和复选框，设置<code>checked</code>为<code>true</code>或<code>false</code>即可</p>
+<h3 id="提交表单"><a href="#提交表单" class="headerlink" title="提交表单"></a>提交表单</h3><p>方式一是通过<code>&lt;form&gt;</code>元素的<code>submit()</code>方法提交一个表单，例如，响应一个<code>&lt;button&gt;</code>的<code>click</code>事件，在JavaScript代码中提交表单</p>
+<p>第二种方式是响应<code>&lt;form&gt;</code>本身的<code>onsubmit</code>事件，在提交form时作修改</p>
+<p><em>注</em>:要return true来告诉浏览器继续提交，如果return false，浏览器将不会继续提交form</p>
+<p>很多登录表单希望用户输入用户名和口令，但是，安全考虑，提交表单时不传输明文口令，而是口令的<br>     pwd.value = toMD5(pwd.value);</p>
+<hr>
+<h1 id="6.4">操作文件</h1>
+
+<p>在HTML表单中，可以上传文件的唯一控件就是<code>&lt;input type=&quot;file&quot;&gt;</code></p>
+<p><strong>注意</strong>：当一个表单包含<code>&lt;input type=&quot;file&quot;&gt;</code>时，表单的<code>enctype</code>必须指定为<code>multipart/form-data</code>，<code>method</code>必须指定为<code>post</code>，浏览器才能正确编码并以<code>multipart/form-dat</code>a格式发送表单的数据。</p>
+<p>HTML5的File API提供了<code>File</code>和<code>FileReader</code>两个主要对象，可以获得文件信息并读取文件</p>
+<p>JavaScript中，执行多任务实际上都是异步调，所以我们在JavaScript代码中就不知道什么时候操作结束，因此需要先设置一个回调函数。当文件读取完成后，JavaScript引擎将自动调用我们设置的回调函数。执行回调函数时，文件已经读取完毕，所以我们可以在回调函数内部安全地获得文件内容</p>
+<hr>
+<h1 id="6.5">AJAX</h1>
+
+<p>AJAX(Asynchronous JavaScript and XML)异步的JavaScript和XML</p>
+<p>AJAX 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术</p>
+<p>AJAX请求是异步执行的，也就是说，要通过回调函数获得响应，在现代浏览器上写AJAX主要依靠<code>XMLHttpRequest</code>对象（IE5 和 IE6 使用 ActiveXObject）</p>
+<pre><code>var xmlhttp;
+if (window.XMLHttpRequest){
+xmlhttp=new XMLHttpRequest();
+}else{
+xmlhttp=new ActiveXObject(&quot;Microsoft.XMLHTTP&quot;);
+}
+
+function success(text) {
+    var textarea = document.getElementById(&apos;test-response-text&apos;);
+    textarea.value = text;
+}
+
+function fail(code) {
+    var textarea = document.getElementById(&apos;test-response-text&apos;);
+    textarea.value = &apos;Error code: &apos; + code;
+}
+
+var request = new XMLHttpRequest(); // 新建XMLHttpRequest对象
+
+request.onreadystatechange = function () { // 状态发生变化时，函数被回调
+    if (request.readyState === 4) { // 成功完成
+        // 判断响应结果:
+        if (request.status === 200) {
+            // 成功，通过responseText拿到响应的文本:
+            return success(request.responseText);
+        } else {
+            // 失败，根据响应码判断失败原因:
+            return fail(request.status);
+        }
+    } else {
+        // HTTP请求还在继续...
+    }
+}
+
+// 发送请求:
+request.open(&apos;GET&apos;, &apos;/&apos;);
+request.send();
+
+alert(&apos;请求已发送，请等待响应...&apos;);
+</code></pre><p>当创建了<code>XMLHttpRequest</code>对象后，要先设置<code>onreadystatechange</code>的回调函数。在回调函数中，通常我们只需通过<code>readyState === 4</code>判断请求是否完成，如果已完成，再根据<code>status === 200</code>判断是否是一个成功的响应。</p>
+<p><code>XMLHttpRequest</code>对象的<code>open()</code>方法有3个参数，第一个参数指定是<code>GET</code>还是<code>POST</code>，第二个参数指定<code>URL</code>地址，第三个参数指定是否使用异步，默认是<code>true</code>，所以不用写</p>
+<p>最后调用<code>send()</code>方法才真正发送请求。<code>GET</code>请求不需要参数，<code>POST</code>请求需要把<code>body</code>部分以字符串或者<code>FormData</code>对象传进去</p>
+<h3 id="安全限制"><a href="#安全限制" class="headerlink" title="安全限制"></a>安全限制</h3><p>默认情况下，JavaScript在发送AJAX请求时，URL的域名必须和当前页面完全一致</p>
+<p>JavaScript请求外域（就是其他网站）的URL：<br>一是通过Flash插件发送HTTP请求；<br>二是通过在同源域名下架设一个代理服务器来转发，JavaScript负责把请求发送到代理服务器：<br>    ‘/proxy?url=<a href="http://www.sina.com.cn" target="_blank" rel="external">http://www.sina.com.cn</a>‘</p>
+<p>第三种方式称为<code>JSONP</code>，它有个限制，只能用<code>GET</code>请求，并且要求返回JavaScript。这种方式跨域实际上是利用了浏览器允许跨域引用JavaScript资源：</p>
+<h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><p>如果浏览器支持HTML5，那么就可以一劳永逸地使用新的跨域策略：CORS了。</p>
+<p>CORS全称Cross-Origin Resource Sharing，是HTML5规范定义的如何跨域访问资源</p>
+<hr>
+<h1 id="6.5">Promise</h1>
+
+<p>在JavaScript的世界中，所有代码都是单线程执行的。</p>
+<p>由于这个“缺陷”，导致JavaScript的所有网络操作，浏览器事件，都必须是异步执行。异步执行可以用回调函数实现</p>
+<p>上一节的AJAX异步执行函数转换为<code>Promise</code>对象，看看用<code>Promise</code>如何简化异步处理</p>
+<pre><code>// ajax函数将返回Promise对象:
+function ajax(method, url, data) {
+    var request = new XMLHttpRequest();
+    return new Promise(function (resolve, reject) {
+        request.onreadystatechange = function () {
+            if (request.readyState === 4) {
+                if (request.status === 200) {
+                    resolve(request.responseText);
+                } else {
+                    reject(request.status);
+                }
+            }
+        };
+        request.open(method, url);
+        request.send(data);
+    });
+}
+var log = document.getElementById(&apos;test-promise-ajax-result&apos;);
+var p = ajax(&apos;GET&apos;, &apos;/api/categories&apos;);
+p.then(function (text) { // 如果AJAX成功，获得响应内容
+    log.innerText = text;
+}).catch(function (status) { // 如果AJAX失败，获得响应代码
+    log.innerText = &apos;ERROR: &apos; + status;
+});
+</code></pre><p><strong>注</strong>：这段需要重新学习研究</p>
+<hr>
+<hr>
+<hr>
+<h1 id="6.5">Canvas</h1>
+
+<p>Canvas是HTML5新增的组件，它就像一块幕布，可以用JavaScript在上面绘制各种图表、动画等</p>
+<p>一个Canvas定义了一个指定尺寸的矩形框，在这个范围内我们可以随意绘制：</p>
+<pre><code>&lt;canvas id=&quot;test-canvas&quot; width=&quot;300&quot; height=&quot;200&quot;&gt;&lt;/canvas&gt;
+</code></pre><p><code>getContext(&#39;2d&#39;)</code>方法让我们拿到一个<code>CanvasRenderingContext2D</code>对象，所有的绘图操作都需要通过这个对象完成</p>
+<pre><code>var ctx - canvas.getContext(&apos;2d&apos;);      //绘制2D
+var gl = canvas.getCOntext(&apos;webgl&apos;);    //绘制3D
+</code></pre><p>Canvas的坐标系统：</p>
+<p><img src="images/2017-07-17-1.png" alt="canvas"></p>
+<p>Canvas除了能绘制基本的形状和文本，还可以实现动画、缩放、各种滤镜和像素转换等高级操作。如果要实现非常复杂的操作，考虑以下优化方案：</p>
+<ul>
+<li>通过创建一个不可见的<code>Canvas</code>来绘图，然后将最终绘制结果复制到页面的可见<code>Canvas</code>中；</li>
+<li>尽量使用整数坐标而不是浮点数；</li>
+<li>可以创建多个重叠的<code>Canvas</code>绘制不同的层，而不是在一个<code>Canvas</code>中绘制非常复杂的图；</li>
+<li>背景图片如果不变可以直接用<code>&lt;img&gt;</code>标签并放到最底层。</li>
+</ul>
 
       
     </div>
@@ -532,6 +664,10 @@ location.hash; // &apos;TOP&apos;
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/18/2017-07-18-JavaScript-Tutorial/" rel="prev" title="2017-07-18-JavaScript-Tutorial">
+                2017-07-18-JavaScript-Tutorial <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -626,7 +762,7 @@ location.hash; // &apos;TOP&apos;
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -703,7 +839,7 @@ location.hash; // &apos;TOP&apos;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#6.1"><span class="nav-number">1.</span> <span class="nav-text">浏览器对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#window"><span class="nav-number">1.0.1.</span> <span class="nav-text">window</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#navigator"><span class="nav-number">1.0.2.</span> <span class="nav-text">navigator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#screen"><span class="nav-number">1.0.3.</span> <span class="nav-text">screen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#location"><span class="nav-number">1.0.4.</span> <span class="nav-text">location</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document"><span class="nav-number">1.0.5.</span> <span class="nav-text">document</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#history"><span class="nav-number">1.0.6.</span> <span class="nav-text">history</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6.2"><span class="nav-number">2.</span> <span class="nav-text">操作DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#更新DOM"><span class="nav-number">2.0.1.</span> <span class="nav-text">更新DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入DOM"><span class="nav-number">2.0.2.</span> <span class="nav-text">插入DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除DOM"><span class="nav-number">2.0.3.</span> <span class="nav-text">删除DOM</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#6.1"><span class="nav-number">1.</span> <span class="nav-text">浏览器对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#window"><span class="nav-number">1.0.1.</span> <span class="nav-text">window</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#navigator"><span class="nav-number">1.0.2.</span> <span class="nav-text">navigator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#screen"><span class="nav-number">1.0.3.</span> <span class="nav-text">screen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#location"><span class="nav-number">1.0.4.</span> <span class="nav-text">location</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document"><span class="nav-number">1.0.5.</span> <span class="nav-text">document</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#history"><span class="nav-number">1.0.6.</span> <span class="nav-text">history</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6.2"><span class="nav-number">2.</span> <span class="nav-text">操作DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#更新DOM"><span class="nav-number">2.0.1.</span> <span class="nav-text">更新DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入DOM"><span class="nav-number">2.0.2.</span> <span class="nav-text">插入DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除DOM"><span class="nav-number">2.0.3.</span> <span class="nav-text">删除DOM</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6.3"><span class="nav-number">3.</span> <span class="nav-text">操作表单</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改值"><span class="nav-number">3.0.1.</span> <span class="nav-text">修改值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置值"><span class="nav-number">3.0.2.</span> <span class="nav-text">设置值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交表单"><span class="nav-number">3.0.3.</span> <span class="nav-text">提交表单</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6.4"><span class="nav-number">4.</span> <span class="nav-text">操作文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6.5"><span class="nav-number">5.</span> <span class="nav-text">AJAX</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安全限制"><span class="nav-number">5.0.1.</span> <span class="nav-text">安全限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS"><span class="nav-number">5.0.2.</span> <span class="nav-text">CORS</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6.5"><span class="nav-number">6.</span> <span class="nav-text">Promise</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6.5"><span class="nav-number">7.</span> <span class="nav-text">Canvas</span></a></li></ol></div>
             
 
           </div>
