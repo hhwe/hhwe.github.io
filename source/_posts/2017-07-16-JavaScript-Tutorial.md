@@ -13,6 +13,9 @@ tags:
     *   [操作DOM](#6.2)
     *   [操作表单](#6.3)
     *   [操作文件](#6.4)
+    *   [AJAX](#6.5)
+    *   [Promise](#6.6)
+    *   [Canvas](#6.7)
 
 ---
 
@@ -271,7 +274,7 @@ CORS全称Cross-Origin Resource Sharing，是HTML5规范定义的如何跨域访
 
 ---
 
-<h1 id="6.5">Promise</h1>
+<h1 id="6.6">Promise</h1>
 
 在JavaScript的世界中，所有代码都是单线程执行的。
 
@@ -313,7 +316,7 @@ CORS全称Cross-Origin Resource Sharing，是HTML5规范定义的如何跨域访
 
 ---
 
-<h1 id="6.5">Canvas</h1>
+<h1 id="6.7">Canvas</h1>
 
 Canvas是HTML5新增的组件，它就像一块幕布，可以用JavaScript在上面绘制各种图表、动画等
 
