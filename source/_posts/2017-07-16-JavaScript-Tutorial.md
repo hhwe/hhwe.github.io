@@ -12,7 +12,7 @@ tags:
     *   [浏览器对象](#6.1)
     *   [操作DOM](#6.2)
     *   [操作表单](#6.3)
-
+    *   [操作文件](#6.4)
 
 ---
 
@@ -142,4 +142,198 @@ JavaScript 中，`document.write()`可用于直接向HTML输出流写内容:
     removed === self; // true
 
 当你遍历一个父节点的子节点并进行删除操作时，要注意，`children`属性是一个只读属性，并且它在子节点变化时会实时更新
+
+
+---
+
+<h1 id="6.3">操作表单</h1>
+
+用JavaScript操作表单和操作DOM是类似的，因为表单本身也是DOM树
+
+不过表单的输入框、下拉框等可以接收用户输入，所以用JavaScript来操作表单，可以获得用户输入的内容，或者对一个输入框设置新的内
+
+HTML表单的输入控件主要有以下几种：
+
+    文本框，对应的<input type="text">，用于输入文本；
+    口令框，对应的<input type="password">，用于输入口令；
+    单选框，对应的<input type="radio">，用于选择一项；
+    复选框，对应的<input type="checkbox">，用于选择多项；
+    下拉框，对应的<select>，用于选择一项；
+    隐藏文本，对应的<input type="hidden">，用户不可见，但表单提交时会把隐藏文本发送到服务器。
+
+### 修改值
+
+如果我们获得了一个`<input>`节点的引用，就可以直接调用`value`获得对应的用户输入值。这种方式可以应用于text、password、hidden以及select。但是，对于单选框和复选框，`value`属性返回的永远是HTML预设的值，而我们需要获得的实际是用户是否“勾上了”选项，所以应该用`checked`判断
+
+### 设置值
+
+对于text、password、hidden以及select，直接设置value就可以，
+对于单选框和复选框，设置`checked`为`true`或`false`即可
+
+### 提交表单
+
+方式一是通过`<form>`元素的`submit()`方法提交一个表单，例如，响应一个`<button>`的`click`事件，在JavaScript代码中提交表单
+
+第二种方式是响应`<form>`本身的`onsubmit`事件，在提交form时作修改
+
+*注*:要return true来告诉浏览器继续提交，如果return false，浏览器将不会继续提交form
+
+很多登录表单希望用户输入用户名和口令，但是，安全考虑，提交表单时不传输明文口令，而是口令的
+     pwd.value = toMD5(pwd.value);
+
+
+---
+
+<h1 id="6.4">操作文件</h1>
+
+在HTML表单中，可以上传文件的唯一控件就是`<input type="file">`
+
+**注意**：当一个表单包含`<input type="file">`时，表单的`enctype`必须指定为`multipart/form-data`，`method`必须指定为`post`，浏览器才能正确编码并以`multipart/form-dat`a格式发送表单的数据。
+
+HTML5的File API提供了`File`和`FileReader`两个主要对象，可以获得文件信息并读取文件
+
+JavaScript中，执行多任务实际上都是异步调，所以我们在JavaScript代码中就不知道什么时候操作结束，因此需要先设置一个回调函数。当文件读取完成后，JavaScript引擎将自动调用我们设置的回调函数。执行回调函数时，文件已经读取完毕，所以我们可以在回调函数内部安全地获得文件内容
+
+
+---
+
+<h1 id="6.5">AJAX</h1>
+
+AJAX(Asynchronous JavaScript and XML)异步的JavaScript和XML
+
+AJAX 是一种在无需重新加载整个网页的情况下，能够更新部分网页的技术
+
+AJAX请求是异步执行的，也就是说，要通过回调函数获得响应，在现代浏览器上写AJAX主要依靠`XMLHttpRequest`对象（IE5 和 IE6 使用 ActiveXObject）
+
+    var xmlhttp;
+    if (window.XMLHttpRequest){
+    xmlhttp=new XMLHttpRequest();
+    }else{
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    function success(text) {
+        var textarea = document.getElementById('test-response-text');
+        textarea.value = text;
+    }
+
+    function fail(code) {
+        var textarea = document.getElementById('test-response-text');
+        textarea.value = 'Error code: ' + code;
+    }
+
+    var request = new XMLHttpRequest(); // 新建XMLHttpRequest对象
+
+    request.onreadystatechange = function () { // 状态发生变化时，函数被回调
+        if (request.readyState === 4) { // 成功完成
+            // 判断响应结果:
+            if (request.status === 200) {
+                // 成功，通过responseText拿到响应的文本:
+                return success(request.responseText);
+            } else {
+                // 失败，根据响应码判断失败原因:
+                return fail(request.status);
+            }
+        } else {
+            // HTTP请求还在继续...
+        }
+    }
+
+    // 发送请求:
+    request.open('GET', '/');
+    request.send();
+
+    alert('请求已发送，请等待响应...');
+
+当创建了`XMLHttpRequest`对象后，要先设置`onreadystatechange`的回调函数。在回调函数中，通常我们只需通过`readyState === 4`判断请求是否完成，如果已完成，再根据`status === 200`判断是否是一个成功的响应。
+
+`XMLHttpRequest`对象的`open()`方法有3个参数，第一个参数指定是`GET`还是`POST`，第二个参数指定`URL`地址，第三个参数指定是否使用异步，默认是`true`，所以不用写
+
+最后调用`send()`方法才真正发送请求。`GET`请求不需要参数，`POST`请求需要把`body`部分以字符串或者`FormData`对象传进去
+
+### 安全限制
+
+默认情况下，JavaScript在发送AJAX请求时，URL的域名必须和当前页面完全一致
+
+JavaScript请求外域（就是其他网站）的URL：
+一是通过Flash插件发送HTTP请求；
+二是通过在同源域名下架设一个代理服务器来转发，JavaScript负责把请求发送到代理服务器：
+    '/proxy?url=http://www.sina.com.cn'
+
+第三种方式称为`JSONP`，它有个限制，只能用`GET`请求，并且要求返回JavaScript。这种方式跨域实际上是利用了浏览器允许跨域引用JavaScript资源：
+
+### CORS
+
+如果浏览器支持HTML5，那么就可以一劳永逸地使用新的跨域策略：CORS了。
+
+CORS全称Cross-Origin Resource Sharing，是HTML5规范定义的如何跨域访问资源
+
+
+---
+
+<h1 id="6.5">Promise</h1>
+
+在JavaScript的世界中，所有代码都是单线程执行的。
+
+由于这个“缺陷”，导致JavaScript的所有网络操作，浏览器事件，都必须是异步执行。异步执行可以用回调函数实现
+
+上一节的AJAX异步执行函数转换为`Promise`对象，看看用`Promise`如何简化异步处理
+
+    // ajax函数将返回Promise对象:
+    function ajax(method, url, data) {
+        var request = new XMLHttpRequest();
+        return new Promise(function (resolve, reject) {
+            request.onreadystatechange = function () {
+                if (request.readyState === 4) {
+                    if (request.status === 200) {
+                        resolve(request.responseText);
+                    } else {
+                        reject(request.status);
+                    }
+                }
+            };
+            request.open(method, url);
+            request.send(data);
+        });
+    }
+    var log = document.getElementById('test-promise-ajax-result');
+    var p = ajax('GET', '/api/categories');
+    p.then(function (text) { // 如果AJAX成功，获得响应内容
+        log.innerText = text;
+    }).catch(function (status) { // 如果AJAX失败，获得响应代码
+        log.innerText = 'ERROR: ' + status;
+    });
+
+**注**：这段需要重新学习研究
+
+----
+
+----
+
+
+---
+
+<h1 id="6.5">Canvas</h1>
+
+Canvas是HTML5新增的组件，它就像一块幕布，可以用JavaScript在上面绘制各种图表、动画等
+
+一个Canvas定义了一个指定尺寸的矩形框，在这个范围内我们可以随意绘制：
+
+    <canvas id="test-canvas" width="300" height="200"></canvas>
+
+`getContext('2d')`方法让我们拿到一个`CanvasRenderingContext2D`对象，所有的绘图操作都需要通过这个对象完成
+    
+    var ctx - canvas.getContext('2d');      //绘制2D
+    var gl = canvas.getCOntext('webgl');    //绘制3D
+
+Canvas的坐标系统：
+
+![canvas](images/2017-07-17-1.png)
+
+Canvas除了能绘制基本的形状和文本，还可以实现动画、缩放、各种滤镜和像素转换等高级操作。如果要实现非常复杂的操作，考虑以下优化方案：
+
+- 通过创建一个不可见的`Canvas`来绘图，然后将最终绘制结果复制到页面的可见`Canvas`中；
+- 尽量使用整数坐标而不是浮点数；
+- 可以创建多个重叠的`Canvas`绘制不同的层，而不是在一个`Canvas`中绘制非常复杂的图；
+- 背景图片如果不变可以直接用`<img>`标签并放到最底层。
 
