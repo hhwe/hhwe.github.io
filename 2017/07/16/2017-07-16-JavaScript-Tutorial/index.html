@@ -93,18 +93,18 @@
 
 
 
-<meta name="description" content="浏览器 浏览器对象 操作DOM 操作表单 操作文件     浏览器对象  windowwindow对象不但充当全局作用域，而且表示浏览器窗口.innerWidth和innerHeight属性，可以获取浏览器窗口的内部宽度和高outerWidth和outerHeight属性，可以获取浏览器窗口的整个宽度和高 navigatornavigator对象表示浏览器的信息，最常用的属性包括：  navig">
+<meta name="description" content="浏览器 浏览器对象 操作DOM 操作表单 操作文件 AJAX Promise Canvas     浏览器对象  windowwindow对象不但充当全局作用域，而且表示浏览器窗口.innerWidth和innerHeight属性，可以获取浏览器窗口的内部宽度和高outerWidth和outerHeight属性，可以获取浏览器窗口的整个宽度和高 navigatornavigator对象表示浏览器">
 <meta name="keywords" content="JS,tutorial">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript-浏览器">
 <meta property="og:url" content="http://yoursite.com/2017/07/16/2017-07-16-JavaScript-Tutorial/index.html">
 <meta property="og:site_name" content="Han&#39;s Notes">
-<meta property="og:description" content="浏览器 浏览器对象 操作DOM 操作表单 操作文件     浏览器对象  windowwindow对象不但充当全局作用域，而且表示浏览器窗口.innerWidth和innerHeight属性，可以获取浏览器窗口的内部宽度和高outerWidth和outerHeight属性，可以获取浏览器窗口的整个宽度和高 navigatornavigator对象表示浏览器的信息，最常用的属性包括：  navig">
+<meta property="og:description" content="浏览器 浏览器对象 操作DOM 操作表单 操作文件 AJAX Promise Canvas     浏览器对象  windowwindow对象不但充当全局作用域，而且表示浏览器窗口.innerWidth和innerHeight属性，可以获取浏览器窗口的内部宽度和高outerWidth和outerHeight属性，可以获取浏览器窗口的整个宽度和高 navigatornavigator对象表示浏览器">
 <meta property="og:image" content="http://yoursite.com/2017/07/16/2017-07-16-JavaScript-Tutorial/images/2017-07-17-1.png">
-<meta property="og:updated_time" content="2017-07-18T07:51:17.096Z">
+<meta property="og:updated_time" content="2017-07-18T08:00:38.326Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript-浏览器">
-<meta name="twitter:description" content="浏览器 浏览器对象 操作DOM 操作表单 操作文件     浏览器对象  windowwindow对象不但充当全局作用域，而且表示浏览器窗口.innerWidth和innerHeight属性，可以获取浏览器窗口的内部宽度和高outerWidth和outerHeight属性，可以获取浏览器窗口的整个宽度和高 navigatornavigator对象表示浏览器的信息，最常用的属性包括：  navig">
+<meta name="twitter:description" content="浏览器 浏览器对象 操作DOM 操作表单 操作文件 AJAX Promise Canvas     浏览器对象  windowwindow对象不但充当全局作用域，而且表示浏览器窗口.innerWidth和innerHeight属性，可以获取浏览器窗口的内部宽度和高outerWidth和outerHeight属性，可以获取浏览器窗口的整个宽度和高 navigatornavigator对象表示浏览器">
 <meta name="twitter:image" content="http://yoursite.com/2017/07/16/2017-07-16-JavaScript-Tutorial/images/2017-07-17-1.png">
 
 
@@ -414,6 +414,9 @@
 <li><a href="#6.2">操作DOM</a></li>
 <li><a href="#6.3">操作表单</a></li>
 <li><a href="#6.4">操作文件</a></li>
+<li><a href="#6.5">AJAX</a></li>
+<li><a href="#6.6">Promise</a></li>
+<li><a href="#6.7">Canvas</a></li>
 </ul>
 </li>
 </ul>
@@ -561,7 +564,7 @@ alert(&apos;请求已发送，请等待响应...&apos;);
 <h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><p>如果浏览器支持HTML5，那么就可以一劳永逸地使用新的跨域策略：CORS了。</p>
 <p>CORS全称Cross-Origin Resource Sharing，是HTML5规范定义的如何跨域访问资源</p>
 <hr>
-<h1 id="6.5">Promise</h1>
+<h1 id="6.6">Promise</h1>
 
 <p>在JavaScript的世界中，所有代码都是单线程执行的。</p>
 <p>由于这个“缺陷”，导致JavaScript的所有网络操作，浏览器事件，都必须是异步执行。异步执行可以用回调函数实现</p>
@@ -594,7 +597,7 @@ p.then(function (text) { // 如果AJAX成功，获得响应内容
 <hr>
 <hr>
 <hr>
-<h1 id="6.5">Canvas</h1>
+<h1 id="6.7">Canvas</h1>
 
 <p>Canvas是HTML5新增的组件，它就像一块幕布，可以用JavaScript在上面绘制各种图表、动画等</p>
 <p>一个Canvas定义了一个指定尺寸的矩形框，在这个范围内我们可以随意绘制：</p>
@@ -839,7 +842,7 @@ var gl = canvas.getCOntext(&apos;webgl&apos;);    //绘制3D
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#6.1"><span class="nav-number">1.</span> <span class="nav-text">浏览器对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#window"><span class="nav-number">1.0.1.</span> <span class="nav-text">window</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#navigator"><span class="nav-number">1.0.2.</span> <span class="nav-text">navigator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#screen"><span class="nav-number">1.0.3.</span> <span class="nav-text">screen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#location"><span class="nav-number">1.0.4.</span> <span class="nav-text">location</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document"><span class="nav-number">1.0.5.</span> <span class="nav-text">document</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#history"><span class="nav-number">1.0.6.</span> <span class="nav-text">history</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6.2"><span class="nav-number">2.</span> <span class="nav-text">操作DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#更新DOM"><span class="nav-number">2.0.1.</span> <span class="nav-text">更新DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入DOM"><span class="nav-number">2.0.2.</span> <span class="nav-text">插入DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除DOM"><span class="nav-number">2.0.3.</span> <span class="nav-text">删除DOM</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6.3"><span class="nav-number">3.</span> <span class="nav-text">操作表单</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改值"><span class="nav-number">3.0.1.</span> <span class="nav-text">修改值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置值"><span class="nav-number">3.0.2.</span> <span class="nav-text">设置值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交表单"><span class="nav-number">3.0.3.</span> <span class="nav-text">提交表单</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6.4"><span class="nav-number">4.</span> <span class="nav-text">操作文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6.5"><span class="nav-number">5.</span> <span class="nav-text">AJAX</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安全限制"><span class="nav-number">5.0.1.</span> <span class="nav-text">安全限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS"><span class="nav-number">5.0.2.</span> <span class="nav-text">CORS</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6.5"><span class="nav-number">6.</span> <span class="nav-text">Promise</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6.5"><span class="nav-number">7.</span> <span class="nav-text">Canvas</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#6.1"><span class="nav-number">1.</span> <span class="nav-text">浏览器对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#window"><span class="nav-number">1.0.1.</span> <span class="nav-text">window</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#navigator"><span class="nav-number">1.0.2.</span> <span class="nav-text">navigator</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#screen"><span class="nav-number">1.0.3.</span> <span class="nav-text">screen</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#location"><span class="nav-number">1.0.4.</span> <span class="nav-text">location</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document"><span class="nav-number">1.0.5.</span> <span class="nav-text">document</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#history"><span class="nav-number">1.0.6.</span> <span class="nav-text">history</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6.2"><span class="nav-number">2.</span> <span class="nav-text">操作DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#更新DOM"><span class="nav-number">2.0.1.</span> <span class="nav-text">更新DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#插入DOM"><span class="nav-number">2.0.2.</span> <span class="nav-text">插入DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除DOM"><span class="nav-number">2.0.3.</span> <span class="nav-text">删除DOM</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6.3"><span class="nav-number">3.</span> <span class="nav-text">操作表单</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#修改值"><span class="nav-number">3.0.1.</span> <span class="nav-text">修改值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置值"><span class="nav-number">3.0.2.</span> <span class="nav-text">设置值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交表单"><span class="nav-number">3.0.3.</span> <span class="nav-text">提交表单</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6.4"><span class="nav-number">4.</span> <span class="nav-text">操作文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6.5"><span class="nav-number">5.</span> <span class="nav-text">AJAX</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安全限制"><span class="nav-number">5.0.1.</span> <span class="nav-text">安全限制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CORS"><span class="nav-number">5.0.2.</span> <span class="nav-text">CORS</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6.6"><span class="nav-number">6.</span> <span class="nav-text">Promise</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6.7"><span class="nav-number">7.</span> <span class="nav-text">Canvas</span></a></li></ol></div>
             
 
           </div>
