@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="JS这块学的比较杂，希望能够自己在整理一遍，博客完全是根据W3school 和 廖雪峰JavaScript教程总结完成的  目录JavaScript教程  JavaScript简介 快速入门 基本语法 数据类型和变量 字符串 数组 对象 条件判断 循环 Map和Set iterable     JavaScript简介   JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的">
+<meta name="description" content="JS这块学的比较杂，希望能够自己在整理一遍，博客完全是根据W3school 和 廖雪峰JavaScript教程总结完成的  目录JavaScript教程  JavaScript简介 快速入门 基本语法 数据类型和变量 字符串 数组 对象 条件判断 循环 Map和Set iterable 错误处理         JavaScript简介   JavaScript一种直译式脚本语言，是一种动态类型、">
 <meta name="keywords" content="JS,tutorial">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript-快速入门">
 <meta property="og:url" content="http://yoursite.com/2017/07/09/2017-07-09-JavaScript-Tutorial/index.html">
 <meta property="og:site_name" content="Han&#39;s Notes">
-<meta property="og:description" content="JS这块学的比较杂，希望能够自己在整理一遍，博客完全是根据W3school 和 廖雪峰JavaScript教程总结完成的  目录JavaScript教程  JavaScript简介 快速入门 基本语法 数据类型和变量 字符串 数组 对象 条件判断 循环 Map和Set iterable     JavaScript简介   JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的">
-<meta property="og:updated_time" content="2017-07-14T15:23:13.943Z">
+<meta property="og:description" content="JS这块学的比较杂，希望能够自己在整理一遍，博客完全是根据W3school 和 廖雪峰JavaScript教程总结完成的  目录JavaScript教程  JavaScript简介 快速入门 基本语法 数据类型和变量 字符串 数组 对象 条件判断 循环 Map和Set iterable 错误处理         JavaScript简介   JavaScript一种直译式脚本语言，是一种动态类型、">
+<meta property="og:updated_time" content="2017-07-19T13:48:42.767Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript-快速入门">
-<meta name="twitter:description" content="JS这块学的比较杂，希望能够自己在整理一遍，博客完全是根据W3school 和 廖雪峰JavaScript教程总结完成的  目录JavaScript教程  JavaScript简介 快速入门 基本语法 数据类型和变量 字符串 数组 对象 条件判断 循环 Map和Set iterable     JavaScript简介   JavaScript一种直译式脚本语言，是一种动态类型、弱类型、基于原型的">
+<meta name="twitter:description" content="JS这块学的比较杂，希望能够自己在整理一遍，博客完全是根据W3school 和 廖雪峰JavaScript教程总结完成的  目录JavaScript教程  JavaScript简介 快速入门 基本语法 数据类型和变量 字符串 数组 对象 条件判断 循环 Map和Set iterable 错误处理         JavaScript简介   JavaScript一种直译式脚本语言，是一种动态类型、">
 
 
 
@@ -421,6 +421,7 @@
 <li><a href="#2.7">循环</a></li>
 <li><a href="#2.8">Map和Set</a></li>
 <li><a href="#2.9">iterable</a></li>
+<li><a href="#2.10">错误处理</a>    </li>
 </ul>
 </li>
 </ul>
@@ -622,6 +623,20 @@ a.forEach(function (element, index, array) {
 });
 </code></pre><p>Set与Array类似，但Set没有索引，因此回调函数的前两个参数都是元素本身:<br>Map的回调函数参数依次为value、key和map本身</p>
 <hr>
+<h2 id="2.10">错误处理</h2>
+
+<p>使用<code>try ... catch ... finally</code>处理错误时，我们编写的代码如</p>
+<ul>
+<li>先执行<code>try { ... }</code>的代码；</li>
+<li>执行到出错的语句时，后续语句不再继续执行，转而执行<code>catch (e) { ... }</code>代码；</li>
+<li>最后执行<code>finally { ... }</code>代码。</li>
+<li>c<code>atch</code>和<code>finally</code>可以不必都出现</li>
+</ul>
+<p>程序也可以主动抛出一个错误，让执行流程直接跳转到<code>catch</code>块。抛出错误使用t<code>hrow</code>语句: throw new Error(‘输入错误’)</p>
+<p>如果在一个函数内部发生了错误，它自身没有捕获，错误就会被抛到外层调用函数，如果外层函数也没有捕获，该错误会一直沿着函数调用链向上抛出，直到被JavaScript引擎捕获，代码终止执行。</p>
+<p>JavaScript引擎是一个事件驱动的执行引擎，代码总是以单线程执行，而回调函数的执行需要等到下一个满足条件的事件出现后，才会被执行</p>
+<p><code>setTimeout()</code>函数可以传入回调函数，并在指定若干毫秒后执行</p>
+<p><strong>注</strong>:涉及到异步代码，无法在调用时捕获，原因就是在捕获的当时，回调函数并未执行</p>
 
       
     </div>
@@ -773,7 +788,7 @@ a.forEach(function (element, index, array) {
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -850,7 +865,7 @@ a.forEach(function (element, index, array) {
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1.0"><span class="nav-number">2.</span> <span class="nav-text">JavaScript简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本特性"><span class="nav-number">2.0.1.</span> <span class="nav-text">基本特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日常用途"><span class="nav-number">2.0.2.</span> <span class="nav-text">日常用途</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS实现"><span class="nav-number">2.0.3.</span> <span class="nav-text">JS实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快速入门"><span class="nav-number">3.</span> <span class="nav-text">快速入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2.1"><span class="nav-number">3.1.</span> <span class="nav-text">基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">3.1.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-number">3.1.2.</span> <span class="nav-text">注释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2.2"><span class="nav-number">3.2.</span> <span class="nav-text">数据类型和变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">3.2.1.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量、运算符"><span class="nav-number">3.2.2.</span> <span class="nav-text">变量、运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strict模式"><span class="nav-number">3.2.3.</span> <span class="nav-text">strict模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2.3"><span class="nav-number">3.3.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2.4"><span class="nav-number">3.4.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2.5"><span class="nav-number">3.5.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2.6"><span class="nav-number">3.6.</span> <span class="nav-text">条件判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2.7"><span class="nav-number">3.7.</span> <span class="nav-text">循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2.8"><span class="nav-number">3.8.</span> <span class="nav-text">Map和Set</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Map"><span class="nav-number">3.8.1.</span> <span class="nav-text">Map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set"><span class="nav-number">3.8.2.</span> <span class="nav-text">Set</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2.9"><span class="nav-number">3.9.</span> <span class="nav-text">iterable</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#1.0"><span class="nav-number">2.</span> <span class="nav-text">JavaScript简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本特性"><span class="nav-number">2.0.1.</span> <span class="nav-text">基本特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#日常用途"><span class="nav-number">2.0.2.</span> <span class="nav-text">日常用途</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JS实现"><span class="nav-number">2.0.3.</span> <span class="nav-text">JS实现</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快速入门"><span class="nav-number">3.</span> <span class="nav-text">快速入门</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2.1"><span class="nav-number">3.1.</span> <span class="nav-text">基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">3.1.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-number">3.1.2.</span> <span class="nav-text">注释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2.2"><span class="nav-number">3.2.</span> <span class="nav-text">数据类型和变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据类型"><span class="nav-number">3.2.1.</span> <span class="nav-text">数据类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量、运算符"><span class="nav-number">3.2.2.</span> <span class="nav-text">变量、运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strict模式"><span class="nav-number">3.2.3.</span> <span class="nav-text">strict模式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2.3"><span class="nav-number">3.3.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2.4"><span class="nav-number">3.4.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2.5"><span class="nav-number">3.5.</span> <span class="nav-text">对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2.6"><span class="nav-number">3.6.</span> <span class="nav-text">条件判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2.7"><span class="nav-number">3.7.</span> <span class="nav-text">循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2.8"><span class="nav-number">3.8.</span> <span class="nav-text">Map和Set</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Map"><span class="nav-number">3.8.1.</span> <span class="nav-text">Map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set"><span class="nav-number">3.8.2.</span> <span class="nav-text">Set</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2.9"><span class="nav-number">3.9.</span> <span class="nav-text">iterable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2.10"><span class="nav-number">3.10.</span> <span class="nav-text">错误处理</span></a></li></ol></li></ol></div>
             
 
           </div>
