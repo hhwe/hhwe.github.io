@@ -1,5 +1,5 @@
 ---
-title: 2017-07-18-JavaScript-Tutorial
+title: JavaScript-jQuery
 date: 2017-07-18 15:55:56
 categories: JS
 tags: 
@@ -9,6 +9,9 @@ tags:
 
 *   [jQuery](#7.0)
     *   [选择器](#7.1)
+    *   [查找和过滤](#7.2)
+    *   [操作DOM](#7.3)
+    *   [事件](#7.4)
 
 
 ---
@@ -162,4 +165,168 @@ jQuery对象的`text()`和`html()`方法分别*获取*和*修改*节点的文本
 
 ---
 
-<h1 id="7.4">操作DOM<h1>
+<h1 id="7.4">事件<h1>
+
+因为JavaScript在浏览器中以单线程模式运行，页面加载后，一旦页面上所有的JavaScript代码被执行完后，就只能依赖触发事件来执行JavaScript代码
+
+浏览器在接收到用户的鼠标或键盘输入后，会自动在对应的DOM节点上触发相应的事件。如果该节点已经绑定了对应的JavaScript处理函数，该函数就会自动调用
+
+`on`方法用来绑定一个事件，我们需要传入事件名称和对应的处理函数,
+直接调用`click()`方法：
+
+    $("button").click(function() {..some code... } )
+
+
+### 鼠标事件
+
++ click: 鼠标单击时触发；
++ dblclick：鼠标双击时触发；
++ mouseenter：鼠标进入时触发；
++ mouseleave：鼠标移出时触发；
++ mousemove：鼠标在DOM内部移动时触发；(chrome上有问题)
++ hover：鼠标进入和退出时触发两个函数，相当于mouseenter加上mouseleave。
+
+### 键盘事件
+
+键盘事件仅作用在当前焦点的DOM上，通常是`<input>`和`<textarea>`。
+
++ keydown：键盘按下时触发；
++ keyup：键盘松开时触发；
++ keypress：按一次键后触发。
+
+
+### 其他事件
+
++ focus：当DOM获得焦点时触发；
++ blur：当DOM失去焦点时触发；
++ change：当`<input>`、`<select`>或`<textarea>`的内容改变时触发；
++ submit：当`<form>`提交时触发；
++ ready：当页面被载入并且DOM树完成初始化后触发,仅作用于`document`对象
+
+我们自己的初始化代码必须放到`document`对象的`ready`事件中，保证DOM已完成初始化:
+    $(document).ready(function(){
+        ...
+    });
+
+如果你遇到`$(function () {...})`的形式，牢记这是document对象的ready事件处理函数
+
+### 事件参数
+
+有些事件，如`mousemove`和`keypress`，我们需要获取鼠标位置和按键的值，否则监听这些事件就没什么意义了。所有事件都会传入Event对象作为参数，可以从Event对象上获取到更多的信息：
+
+### 取消绑定
+
+无参数调用`off()`一次性移除已绑定的所有类型的事件处理函数，一个已被绑定的事件可以解除绑定，通过`off('click', function)`实现
+
+`input.change()`相当于`input.trigger('change')`，它是`trigger()`方法的简写
+
+
+---
+
+<h1 id="7.5">动画<h1>
+
+用JavaScript实现动画，原理非常简单：我们只需要以固定的时间间隔（例如，0.1秒），每次把DOM元素的CSS样式修改一点（例如，高宽各增加10%），看起来就像动画了
+
+### show/hide
+
+直接以无参数形式调用`show()`和`hide()`，会显示和隐藏DOM元素，`toggle()`方法则根据当前状态决定是`show()`还是`hide()`。但是，只要传递一个时间参数进去，就变成了动画
+
+### slideUp/slideDown
+
+`slideUp()`把一个可见的DOM元素收起来，效果跟拉上窗帘似的，`slideDown()`相反，而`slideToggle()`则根据元素是否可见来决定下一步动作
+
+### fadeIn/fadeOut
+
+`fadeIn()`和`fadeOut()`的动画效果是淡入淡出，也就是通过不断设置DOM元素的`opacity`属性来实现，而`fadeToggle(`)则根据元素是否可见来决定下一步动作
+
+### 自定义动画
+
+`animate()`，它可以实现任意动画效果，我们需要传入的参数就是DOM元素最终的CSS状态和时间，jQuery在时间段内不断调整CSS直到达到我们设定的值
+
+
+---
+
+<h1 id="7.6">AJAX<h1>
+
+jQuery在全局对象`jQuery`（也就是`$`）绑定了`ajax(`)函数，可以处理AJAX请求。`ajax(url, settings)`函数需要接收一个`UR`L和一个可选的`settings`对象，常用的选项如下：
+
+- `async`：是否异步执行AJAX请求，默认为true，千万不要指定为false；
+- `method`：发送的Method，缺省为'GET'，可指定为'POST'、'PUT'等；
+- `contentTyp`e：发送POST请求的格式，默认值为`'application/x-www-form-urlencoded; charset=UTF-8'`，也可以指定为`text/plain`、`application/json`；
+- `data`：发送的数据，可以是字符串、数组或object。如果是GET请求，data将被转换成query附加到URL上，如果是POST请求，根据contentType把data序列化成合适的格式；
+- `headers`：发送的额外的HTTP头，必须是一个object；
+- `dataType`：接收的数据格式，可以指定为'html'、'xml'、'json'、'text'等，缺省情况下根据响应的Content-Type猜测。
+
+下面的例子发送一个GET请求，并返回一个JSON格式的数据：
+
+    var jqxhr = $.ajax('/api/categories', {
+        dataType: 'json'
+    });
+
+对常用的AJAX操作，jQuery提供了一些辅助方法。由于GET请求最常见，所以jQuery提供了`get()`方法，可以这么写
+    
+    var jqxhr = $.get('/path/to/resource', {
+        name: 'Bob Lee',
+        check: 1
+    }); //'/path/to/resource?name=Bob%20Lee&check=1'
+
+`post()`和`get()`类似，但是传入的第二个参数默认被序列化为`application/x-www-form-urlencoded`
+
+    var jqxhr = $.post('/path/to/resource', {
+        name: 'Bob Lee',
+        check: 1
+    }); // 'name=Bob%20Lee&check=1'作为POST的body被发送
+
+`getJSON()`方法来快速通过GET获取一个JSON对象
+
+
+---
+
+<h1 id="7.7">扩展<h1>
+
+
+当我们使用jQuery对象的方法时，由于jQuery对象可以操作一组DOM，而且支持链式操作，所以用起来非常方便。
+
+但是jQuery内置的方法永远不可能满足所有的需求。比如，我们想要高亮显示某些DOM元素，用jQuery可以这么实现：
+
+    $('span.hl').css('backgroundColor', '#fffceb').css('color', '#d85030');
+    $('p a.hl').css('backgroundColor', '#fffceb').css('color', '#d85030');
+
+我们可以扩展jQuery来实现自定义方法。将来如果要修改高亮的逻辑，只需修改一处扩展代码。这种方式也称为编写jQuery插件
+
+给jQuery对象绑定一个新方法是通过扩展`$.fn`对象实现的。让我们来编写第一个扩展——`highlight1()`:
+
+    $.fn.highlight1 = function(){
+        this.css('backgroundColor', '#fffceb').css('color', '#d85030');
+        return this;
+    }
+
+细心的童鞋可能发现了，为什么最后要`return this;`？因为jQuery对象支持链式操作，我们自己写的扩展方法也要能继续链式下去
+
+    $.fn.highlight2 = function(options){
+        var bgcolor = options && options.backgroundColor || '#fffceb';
+        var color = options && options.color || 'd85030';
+        this.css('backgroundColor', bgcolor).css('color', color);
+        return this;
+    }
+
+对于默认值的处理，我们用了一个简单的`&&`和`||`短路操作符，总能得到一个有效的值。另一种方法是使用jQuery提供的辅助方法`$.extend(target, obj1, obj2, ...)`，它把多个object对象的属性合并到第一个target对象中，遇到同名属性，总是使用靠后的对象的值，也就是越往后优先级越高：
+
+    $.fn.highlight = function (options) {
+        var opts = $.extend({}, $.fn.highlight.defaults, options);
+        this.css('backgroundColor', opts.backgroundColor).css('color', opts.color);
+        return this;
+    }
+    $.fn.highlight.defaults = {
+        color: '#d85030',
+        backgroundColor: '#fff8de'
+    }
+
+最终，我们得出编写一个jQuery插件的原则：
+
+- 给`$.fn`绑定函数，实现插件的代码逻辑；
+- 插件函数最后要`return this;`以支持链式调用；
+- 插件函数要有默认值，绑定在`$.fn.<pluginName>.defaults`上；
+- 用户在调用时可传入设定值以便覆盖默认值。
+
+
