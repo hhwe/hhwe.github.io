@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="Valar Morghuli">
+<meta name="description" content="Node.js  模块 模块 模块 模块 模块     模块要在模块中对外输出变量，用： module.exports = variable; 输出的变量可以是任意对象、函数、数组等等。 要引入其他模块输出的对象，用： var foo = require(&amp;apos;other_module&amp;apos;); 引入的对象具体是什么，取决于引入模块输出的对象。 如果要输出一个键值对象{}，可以利用ex">
 <meta name="keywords" content="JS,tutorial">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript-Node.js">
 <meta property="og:url" content="http://yoursite.com/2017/07/20/2017-07-20-JavaScript-Tutorial/index.html">
 <meta property="og:site_name" content="Han&#39;s Notes">
-<meta property="og:description" content="Valar Morghuli">
-<meta property="og:updated_time" content="2017-07-20T05:34:53.053Z">
+<meta property="og:description" content="Node.js  模块 模块 模块 模块 模块     模块要在模块中对外输出变量，用： module.exports = variable; 输出的变量可以是任意对象、函数、数组等等。 要引入其他模块输出的对象，用： var foo = require(&amp;apos;other_module&amp;apos;); 引入的对象具体是什么，取决于引入模块输出的对象。 如果要输出一个键值对象{}，可以利用ex">
+<meta property="og:updated_time" content="2017-07-20T10:17:30.186Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript-Node.js">
-<meta name="twitter:description" content="Valar Morghuli">
+<meta name="twitter:description" content="Node.js  模块 模块 模块 模块 模块     模块要在模块中对外输出变量，用： module.exports = variable; 输出的变量可以是任意对象、函数、数组等等。 要引入其他模块输出的对象，用： var foo = require(&amp;apos;other_module&amp;apos;); 引入的对象具体是什么，取决于引入模块输出的对象。 如果要输出一个键值对象{}，可以利用ex">
 
 
 
@@ -406,7 +406,32 @@
       
 
       
-        
+        <p><strong>Node.js</strong></p>
+<ul>
+<li><a href="#1.0">模块</a><ul>
+<li><a href="1.1">模块</a></li>
+<li><a href="">模块</a></li>
+<li><a href="">模块</a></li>
+<li><a href="">模块</a></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><p>要在模块中对外输出变量，用：</p>
+<pre><code>module.exports = variable;
+</code></pre><p>输出的变量可以是任意对象、函数、数组等等。</p>
+<p>要引入其他模块输出的对象，用：</p>
+<pre><code>var foo = require(&apos;other_module&apos;);
+</code></pre><p>引入的对象具体是什么，取决于引入模块输出的对象。</p>
+<p>如果要输出一个键值对象<code>{}</code>，可以利用<code>exports</code>这个已存在的空对象<code>{}</code>，并继续在上面添加新的键值；</p>
+<pre><code>exports.foo = function () { return &apos;foo&apos;; };
+exports.bar = function () { return &apos;bar&apos;; };
+module.exports.foo = function () { return &apos;foo&apos;; };
+module.exports.bar = function () { return &apos;bar&apos;; };
+</code></pre><p>如果要输出一个函数或数组，必须直接对<code>module.exports</code>对象赋值。</p>
+<p>所以我们可以得出结论：直接对<code>module.exports</code>赋值，可以应对任何情况</p>
+<p>## </p>
+
       
     </div>
 
@@ -459,6 +484,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/07/24/2017-07-24-Python-OS-Random/" rel="prev" title="Python-Basic-Model">
+                Python-Basic-Model <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -528,8 +557,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -544,7 +582,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -555,7 +593,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">7</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -566,7 +604,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -611,6 +649,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模块"><span class="nav-number">1.</span> <span class="nav-text">模块</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
