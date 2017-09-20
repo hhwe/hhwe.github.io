@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="tutorial,python," />
+  <meta name="keywords" content="CSS,Web,HTML," />
 
 
 
@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="OS 操作系统接口os模块的常用功能：  os.name      #显示当前使用的平台 os.getcwd()      #显示当前python脚本工作路径 os.listdir(‘dirname’)        #返回指定目录下的所有文件和目录名 os.remove(‘filename’)       #删除一个文件 os.makedirs(‘dirname/dirname’)     #可">
-<meta name="keywords" content="tutorial,python">
+<meta name="description" content="Valar Morghuli">
+<meta name="keywords" content="CSS,Web,HTML">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python-Basic-Model">
-<meta property="og:url" content="http://yoursite.com/2017/07/24/2017-07-24-Python-OS-Random/index.html">
+<meta property="og:title" content="Webpage Layout">
+<meta property="og:url" content="http://yoursite.com/2017/09/21/2017-09-20-webpage-layout/index.html">
 <meta property="og:site_name" content="Han&#39;s Notes">
-<meta property="og:description" content="OS 操作系统接口os模块的常用功能：  os.name      #显示当前使用的平台 os.getcwd()      #显示当前python脚本工作路径 os.listdir(‘dirname’)        #返回指定目录下的所有文件和目录名 os.remove(‘filename’)       #删除一个文件 os.makedirs(‘dirname/dirname’)     #可">
-<meta property="og:updated_time" content="2017-07-24T02:38:26.474Z">
+<meta property="og:description" content="Valar Morghuli">
+<meta property="og:updated_time" content="2017-09-20T23:49:02.687Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python-Basic-Model">
-<meta name="twitter:description" content="OS 操作系统接口os模块的常用功能：  os.name      #显示当前使用的平台 os.getcwd()      #显示当前python脚本工作路径 os.listdir(‘dirname’)        #返回指定目录下的所有文件和目录名 os.remove(‘filename’)       #删除一个文件 os.makedirs(‘dirname/dirname’)     #可">
+<meta name="twitter:title" content="Webpage Layout">
+<meta name="twitter:description" content="Valar Morghuli">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/24/2017-07-24-Python-OS-Random/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/21/2017-09-20-webpage-layout/"/>
 
 
 
 
 
-  <title>Python-Basic-Model | Han's Notes</title>
+  <title>Webpage Layout | Han's Notes</title>
   
 
 
@@ -320,7 +320,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/24/2017-07-24-Python-OS-Random/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/21/2017-09-20-webpage-layout/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SHUerHan">
@@ -337,7 +337,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python-Basic-Model</h1>
+          <h1 class="post-title" itemprop="name headline">Webpage Layout</h1>
         
 
         <div class="post-meta">
@@ -349,8 +349,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-24T09:13:47+08:00">
-                2017-07-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-21T07:30:48+08:00">
+                2017-09-21
               </time>
             
 
@@ -372,8 +372,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
                   </a>
                 </span>
 
@@ -406,64 +406,7 @@
       
 
       
-        <h1 id="OS-操作系统接口"><a href="#OS-操作系统接口" class="headerlink" title="OS 操作系统接口"></a>OS 操作系统接口</h1><p>os模块的常用功能：</p>
-<ol>
-<li>os.name      #显示当前使用的平台</li>
-<li>os.getcwd()      #显示当前python脚本工作路径</li>
-<li>os.listdir(‘dirname’)        #返回指定目录下的所有文件和目录名</li>
-<li>os.remove(‘filename’)       #删除一个文件</li>
-<li>os.makedirs(‘dirname/dirname’)     #可生成多层递规目录</li>
-<li>os.rmdir(‘dirname’)     #删除单级目录</li>
-<li>os.rename(“oldname”,”newname”)    #重命名文件</li>
-<li>os.system()    #运行shell命令,注意：这里是打开一个新的shell，运行命令，当命令结束后，关闭shell</li>
-<li>os.sep    #显示当前平台下路径分隔符</li>
-<li>os.linesep    #给出当前平台使用的行终止符</li>
-<li>os.environ    #获取系统环境变量</li>
-<li>os.path.abspath(path)    #显示当前绝对路径</li>
-<li>os.path.dirname(path)    #返回该路径的父目录</li>
-<li>os.path.basename(path)    #返回该路径的最后一个目录或者文件,如果path以／或\结尾，那么就会返回空值。</li>
-<li>os.path.isfile(path)     #如果path是一个文件，则返回True</li>
-<li>os.path.isdir(path)    #如果path是一个目录，则返回True</li>
-<li>os.path.exists(path)    #如果path存在，则返回True</li>
-<li>os.path.split(path)  #将path分割成路径名和文件名。（事实上，如果你完全使用目录，它也会将最后一个目录作为文件名而分离，同时它不会判断文件或目录是否存在）</li>
-<li>os.path.join(path,name)   #连接目录与文件名或目录 结果为path/name</li>
-</ol>
-<hr>
-<h1 id="sys-系统特定参数和函数"><a href="#sys-系统特定参数和函数" class="headerlink" title="sys 系统特定参数和函数"></a>sys 系统特定参数和函数</h1><ol>
-<li>sys.argv: 实现从程序外部向程序传递参数。</li>
-<li>sys.exit([arg]): 程序中间的退出，arg=0为正常退出。</li>
-<li>sys.getdefaultencoding(): 获取系统当前编码，一般默认为ascii。</li>
-<li>sys.setdefaultencoding(): 设置系统默认编码，执行dir（sys）时不会看到这个方法，在解释器中执行不通过，可以先执行reload(sys)，在执行 setdefaultencoding(‘utf8’)，此时将系统默认编码设置为utf8。（见设置系统默认编码 ）</li>
-<li>sys.getfilesystemencoding(): 获取文件系统使用编码方式</li>
-<li>sys.path: 获取指定模块搜索路径的字符串集合，可以将写好的模块放在得到的某个路径下，就可以在程序中import时正确找到。</li>
-<li>sys.platform: 获取当前系统平台。</li>
-<li>sys.stdin,sys.stdout,sys.stderr: stdin , stdout , 以及stderr 变量包含与标准I/O 流对应的流对象. 如果需要更好地控制输出,而print 不能满足你的要求, 它们就是你所需要的. 你也可以替换它们, 这时候你就可以重定向输出和输入到其它设备( device ), 或者以非标准的方式处理它们</li>
-</ol>
-<hr>
-<h1 id="random-产生随机数"><a href="#random-产生随机数" class="headerlink" title="random 产生随机数"></a>random 产生随机数</h1><ol>
-<li>random.random()用于生成一个0到1的随机符点数</li>
-<li>random.uniform(a, b)，用于生成一个指定范围内的随机符点数</li>
-<li>random.randint(a, b)，用于生成一个指定范围内的整数</li>
-<li>random.randrange([start], stop[, step])，从指定范围内，按指定基数递增的集合中 获取一个随机数</li>
-<li>random.choice(sequence)从序列中获取一个随机元素</li>
-<li>random.shuffle(x[, random])，用于将一个列表中的元素打乱</li>
-<li>random.sample(sequence, k)，从指定序列中随机获取指定长度的片断</li>
-<li>random.seed() 方法改变随机数生成器的种子，可以在调用其他随机模块函数之前调用此函数</li>
-</ol>
-<hr>
-<h1 id="pickle"><a href="#pickle" class="headerlink" title="pickle"></a>pickle</h1><ol>
-<li>pickle.dumps(d),方法把任意对象序列化成一个bytes</li>
-<li>pickle.dump(f,d),直接把对象序列化后写入一个file-like Object</li>
-<li>pickle.loads(),方法反序列化出对象</li>
-<li>pickle.load(f),方法从一个file-like Object中直接反序列化出对象</li>
-</ol>
-<hr>
-<h1 id="JSON"><a href="#JSON" class="headerlink" title="JSON"></a>JSON</h1><ol>
-<li>json.dump(obj, fp, <em>, skipkeys=False, ensure_ascii=True, check_circular=True, allow_nan=True, cls=None, indent=None, separators=None, default=None, sort_keys=False, *</em>kw),方法可以直接把JSON写入一个file-like Object</li>
-<li>json.dumps(),方法返回一个str，内容就是标准的JSON</li>
-</ol>
-<p>要把JSON反序列化为Python对象，用<code>loads()</code>或者对应的<code>load()</code>方法，前者把JSON的字符串反序列化，后者从file-like Object中读取字符串并反序列化</p>
-
+        
       
     </div>
 
@@ -492,9 +435,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/tutorial/" rel="tag"># tutorial</a>
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
           
-            <a href="/tags/python/" rel="tag"># python</a>
+            <a href="/tags/Web/" rel="tag"># Web</a>
+          
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
           
         </div>
       
@@ -507,8 +452,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/20/2017-07-20-JavaScript-Tutorial/" rel="next" title="JavaScript-Node.js">
-                <i class="fa fa-chevron-left"></i> JavaScript-Node.js
+              <a href="/2017/07/29/2017-07-29-HTTP-socket/" rel="next" title="Let’s Build A Web Server">
+                <i class="fa fa-chevron-left"></i> Let’s Build A Web Server
               </a>
             
           </div>
@@ -516,10 +461,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/29/2017-07-29-HTTP-socket/" rel="prev" title="Let’s Build A Web Server">
-                Let’s Build A Web Server <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -589,17 +530,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -681,22 +613,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OS-操作系统接口"><span class="nav-number">1.</span> <span class="nav-text">OS 操作系统接口</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#sys-系统特定参数和函数"><span class="nav-number">2.</span> <span class="nav-text">sys 系统特定参数和函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#random-产生随机数"><span class="nav-number">3.</span> <span class="nav-text">random 产生随机数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pickle"><span class="nav-number">4.</span> <span class="nav-text">pickle</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSON"><span class="nav-number">5.</span> <span class="nav-text">JSON</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
