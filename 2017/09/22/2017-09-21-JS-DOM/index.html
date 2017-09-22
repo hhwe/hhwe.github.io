@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="JS,tutorial," />
+  <meta name="keywords" content="JS,DOM,WINDOW," />
 
 
 
@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="目录 函数   函数定义和调用 变量作用域 方法 高阶函数 闭包 箭头函数 generator     函数   函数定义和调用  定义函数在JavaScript中，定义函数的方式如下： function name(x) {     ... } function指出这是一个函数定义；name是函数的名称；(x)括号内列出函数的参数，多个参数以,分隔；{ ... }之间的代码是函数体，可以包含若干语">
-<meta name="keywords" content="JS,tutorial">
+<meta name="description" content="HTML-DOM当网页被加载时，浏览器会创建页面的文档对象模型（Document Object Model） 通过可编程的对象模型，JavaScript 获得了足够的能力来创建动态的 HTML：  JavaScript 能够改变页面中的所有 HTML 元素 JavaScript 能够改变页面中的所有 HTML 属性 JavaScript 能够改变页面中的所有 CSS 样式 JavaScript 能">
+<meta name="keywords" content="JS,DOM,WINDOW">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript-函数">
-<meta property="og:url" content="http://yoursite.com/2017/07/14/2017-07-14-JavaScript-Tutorial/index.html">
+<meta property="og:title" content="2017-09-21-JS-DOM-WINDOW">
+<meta property="og:url" content="http://yoursite.com/2017/09/22/2017-09-21-JS-DOM/index.html">
 <meta property="og:site_name" content="Han&#39;s Notes">
-<meta property="og:description" content="目录 函数   函数定义和调用 变量作用域 方法 高阶函数 闭包 箭头函数 generator     函数   函数定义和调用  定义函数在JavaScript中，定义函数的方式如下： function name(x) {     ... } function指出这是一个函数定义；name是函数的名称；(x)括号内列出函数的参数，多个参数以,分隔；{ ... }之间的代码是函数体，可以包含若干语">
-<meta property="og:updated_time" content="2017-07-14T14:45:41.959Z">
+<meta property="og:description" content="HTML-DOM当网页被加载时，浏览器会创建页面的文档对象模型（Document Object Model） 通过可编程的对象模型，JavaScript 获得了足够的能力来创建动态的 HTML：  JavaScript 能够改变页面中的所有 HTML 元素 JavaScript 能够改变页面中的所有 HTML 属性 JavaScript 能够改变页面中的所有 CSS 样式 JavaScript 能">
+<meta property="og:updated_time" content="2017-09-22T12:08:51.404Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript-函数">
-<meta name="twitter:description" content="目录 函数   函数定义和调用 变量作用域 方法 高阶函数 闭包 箭头函数 generator     函数   函数定义和调用  定义函数在JavaScript中，定义函数的方式如下： function name(x) {     ... } function指出这是一个函数定义；name是函数的名称；(x)括号内列出函数的参数，多个参数以,分隔；{ ... }之间的代码是函数体，可以包含若干语">
+<meta name="twitter:title" content="2017-09-21-JS-DOM-WINDOW">
+<meta name="twitter:description" content="HTML-DOM当网页被加载时，浏览器会创建页面的文档对象模型（Document Object Model） 通过可编程的对象模型，JavaScript 获得了足够的能力来创建动态的 HTML：  JavaScript 能够改变页面中的所有 HTML 元素 JavaScript 能够改变页面中的所有 HTML 属性 JavaScript 能够改变页面中的所有 CSS 样式 JavaScript 能">
 
 
 
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/14/2017-07-14-JavaScript-Tutorial/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/22/2017-09-21-JS-DOM/"/>
 
 
 
 
 
-  <title>JavaScript-函数 | Han's Notes</title>
+  <title>2017-09-21-JS-DOM-WINDOW | Han's Notes</title>
   
 
 
@@ -320,7 +320,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/14/2017-07-14-JavaScript-Tutorial/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/22/2017-09-21-JS-DOM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="SHUerHan">
@@ -337,7 +337,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JavaScript-函数</h1>
+          <h1 class="post-title" itemprop="name headline">2017-09-21-JS-DOM-WINDOW</h1>
         
 
         <div class="post-meta">
@@ -349,8 +349,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-14T22:17:39+08:00">
-                2017-07-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-22T02:12:21+08:00">
+                2017-09-22
               </time>
             
 
@@ -372,8 +372,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JS/" itemprop="url" rel="index">
-                    <span itemprop="name">JS</span>
+                  <a href="/categories/Web/" itemprop="url" rel="index">
+                    <span itemprop="name">Web</span>
                   </a>
                 </span>
 
@@ -406,209 +406,177 @@
       
 
       
-        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><ul>
-<li><a href="#3.0">函数</a>  <ul>
-<li><a href="#3.1">函数定义和调用</a></li>
-<li><a href="#3.2">变量作用域</a></li>
-<li><a href="#3.3">方法</a></li>
-<li><a href="#3.4">高阶函数</a></li>
-<li><a href="#3.5">闭包</a></li>
-<li><a href="#3.6">箭头函数</a></li>
-<li><a href="#3.7">generator</a></li>
-</ul>
-</li>
-</ul>
-<hr>
-<h1 id="3.0">函数</h1>
-
-<hr>
-<h2 id="3.1">函数定义和调用</h2>
-
-<h3 id="定义函数"><a href="#定义函数" class="headerlink" title="定义函数"></a>定义函数</h3><p>在JavaScript中，定义函数的方式如下：</p>
-<pre><code>function name(x) {
-    ...
-}
-</code></pre><p><code>function</code>指出这是一个函数定义；<br><code>name</code>是函数的名称；<br><code>(x)</code>括号内列出函数的参数，多个参数以<code>,</code>分隔；<br><code>{ ... }</code>之间的代码是函数体，可以包含若干语句，甚至可以没有任何语句。</p>
-<p><em>注</em>：如果没有<code>return</code>语句，函数执行完毕后也会返回结果，只是结果为undefined。</p>
-<p>由于JavaScript的函数也是一个对象，上述定义的函数实际上是一个函数对象，而函数名<code>name</code>可以视为指向该函数的变量。</p>
-<p>因此，第二种定义函数的方式如下：</p>
-<pre><code>var name = function (x) {
-    ...
-};
-</code></pre><p>在这种方式下，function (x) { … }是一个匿名函数，它没有函数名。但是，这个匿名函数赋值给了变量name，所以，通过变量name就可以调用该函数。</p>
-<p>上述两种定义完全等价，注意第二种方式按照完整语法需要在函数体末尾加一个<code>;</code>，表示赋值语句结束。</p>
-<h3 id="调用函数"><a href="#调用函数" class="headerlink" title="调用函数"></a>调用函数</h3><p>由于JavaScript允许传入任意个参数而不影响调用，因此传入的参数比定义的参数多也没有问题，虽然函数内部并不需要这些参数</p>
-<p>传入的参数比定义的少也没有问题：</p>
-<pre><code>abs(); // 返回NaN
-</code></pre><p>此时abs(x)函数的参数x将收到undefined，计算结果为NaN。</p>
+        <h1 id="HTML-DOM"><a href="#HTML-DOM" class="headerlink" title="HTML-DOM"></a>HTML-DOM</h1><p>当网页被加载时，浏览器会创建页面的文档对象模型（Document Object Model）</p>
+<p>通过可编程的对象模型，JavaScript 获得了足够的能力来创建动态的 HTML：</p>
 <ul>
-<li>argument<br>JavaScript还有一个免费赠送的关键字<code>arguments</code>，它只在函数内部起作用，并且永远指向当前函数的调用者传入的所有参数。也就是说，即使函数不定义任何参数，还是可以拿到参数的值</li>
-<li>rest<br><code>rest</code>参数只能写在最后，前面用<code>...</code>标识，从运行结果可知，传入的参数先绑定<code>a</code>、<code>b</code>，多余的参数以数组形式交给变量<code>rest</code>，所以，不再需要<code>arguments</code>我们就获取了全部参数。如果传入的参数连正常定义的参数都没填满，也不要紧，<code>rest</code>参数会接收一个空数组（注意不是undefined）。</li>
+<li>JavaScript 能够改变页面中的所有 HTML 元素</li>
+<li>JavaScript 能够改变页面中的所有 HTML 属性</li>
+<li>JavaScript 能够改变页面中的所有 CSS 样式</li>
+<li>JavaScript 能够对页面中的所有事件做出反应</li>
 </ul>
-<p><em>注</em>：前面我们讲到了JavaScript引擎有一个在行末自动添加分号的机制，这可能让你栽到return语句的一个大坑</p>
-<hr>
-<h2 id="3.2">变量作用域</h2>
+<p>使用原生JavaScript和jQuery操作DOM</p>
+<h2 id="查找HTML元素"><a href="#查找HTML元素" class="headerlink" title="查找HTML元素"></a>查找HTML元素</h2><pre><code>getElementById()        返回对拥有指定 id 的第一个对象的引用
+getElementsByName()        返回带有指定名称的对象集合
+getElementsByTagName()    返回带有指定标签名的对象集合
+</code></pre><p>提示：通过类名查找 HTML 元素在 IE 5,6,7,8 中无效</p>
+<h2 id="改变-HTML-内容"><a href="#改变-HTML-内容" class="headerlink" title="改变 HTML 内容"></a>改变 HTML 内容</h2><pre><code>document.write()    可用于直接向 HTML 输出流写内容
+document.writeln()  不同的是在每个表达式之后写一个换行符
+document.open()        打开一个流，以收集来自任何 document.write() 或 document.writeln() 方法的输出
+document.close()    关闭用 document.open() 方法打开的输出流，并显示选定的数据
+</code></pre><h2 id="改变-HTML-属性"><a href="#改变-HTML-属性" class="headerlink" title="改变 HTML 属性"></a>改变 HTML 属性</h2><pre><code>document.getElementById(id).attribute=new value
+</code></pre><h2 id="改变-HTML-样式"><a href="#改变-HTML-样式" class="headerlink" title="改变 HTML 样式"></a>改变 HTML 样式</h2><pre><code>document.getElementById(id).style.property=new style
+</code></pre><h2 id="DOM-事件"><a href="#DOM-事件" class="headerlink" title="DOM 事件"></a>DOM 事件</h2><pre><code>onabort            图像的加载被中断
+onblur            元素失去焦点
+onchange        域的内容被改变
+onclick            当用户点击某个对象时调用的事件句柄
+ondblclick      当用户双击某个对象时调用的事件句柄
+onerror            在加载文档或图像时发生错误
+onfocus            元素获得焦点
+onkeydown        某个键盘按键被按下
+onkeypress        某个键盘按键被按下并松开
+onkeyup            某个键盘按键被松开
+onload            一张页面或一幅图像完成加载
+onmousedown        鼠标按钮被按下
+onmousemove        鼠标被移动
+onmouseout        鼠标从某元素移开
+onmouseover        鼠标移到某元素之上
+onmouseup        鼠标按键被松开
+onreset            重置按钮被点击
+onresize        窗口或框架被重新调整大小
+onselect        文本被选中
+onsubmit        确认按钮被点击
+onunload        用户退出页面
+altKey            返回当事件被触发时，&quot;ALT&quot; 是否被按下
+button            返回当事件被触发时，哪个鼠标按钮被点击
+clientX            返回当事件被触发时，鼠标指针的水平坐标
+clientY            返回当事件被触发时，鼠标指针的垂直坐标
+ctrlKey            返回当事件被触发时，&quot;CTRL&quot; 键是否被按下
+metaKey            返回当事件被触发时，&quot;meta&quot; 键是否被按下
+relatedTarget    返回与事件的目标节点相关的节点
+screenX            返回当某个事件被触发时，鼠标指针的水平坐标
+screenY            返回当某个事件被触发时，鼠标指针的垂直坐标
+shiftKey        返回当事件被触发时，&quot;SHIFT&quot; 键是否被按下
+</code></pre><h2 id="添加和删除节点（HTML-元素）"><a href="#添加和删除节点（HTML-元素）" class="headerlink" title="添加和删除节点（HTML 元素）"></a>添加和删除节点（HTML 元素）</h2><pre><code>para = document.createElement()
+node = document.createTextNode()
+para.appendChild(node)
 
-<p>在JavaScript中，用<code>var</code>申明的变量实际上是有作用域的。</p>
-<h3 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h3><p>JavaScript的函数定义有个特点，它会先扫描整个函数体的语句，把所有申明的变量“提升”到函数顶部：</p>
-<pre><code>&apos;use strict&apos;;
-function foo() {
-    var x = &apos;Hello, &apos; + y;  
-    alert(x);   // 没有报错输出&apos;Hello, undefined&apos;
-    var y = &apos;Bob&apos;;  //变量y`提升`了
-}
-foo();
-</code></pre><p>由于JavaScript的这一怪异的“特性”，我们在函数内部定义变量时，请严格遵守“在函数内部首先申明所有变量”这一规则。</p>
-<h3 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h3><p>不在任何函数内定义的变量就具有全局作用域。实际上，JavaScript默认有一个全局对象window，全局作用域的变量实际上被绑定到window的一个属性：</p>
-<pre><code>var c = &apos;1&apos;;    //相当于window.c = &apos;1&apos;;
-var f = foo(){} //相当于window.f = f();
-</code></pre><p>全局变量会绑定到window上，不同的JavaScript文件如果使用了相同的全局变量，或者定义了相同名字的顶层函数，都会造成命名冲突，并且很难被发现。减少冲突的一个方法是把自己的所有变量和函数全部绑定到一个全局变量中。例如：</p>
-<pre><code>// 唯一的全局变量MYAPP:
-var MYAPP = {};
-// 其他变量:
-MYAPP.name = &apos;myapp&apos;;
-MYAPP.version = 1.0;
-// 其他函数:
-MYAPP.foo = function () {
-    return &apos;foo&apos;;
-};
-</code></pre><h3 id="局部作用域"><a href="#局部作用域" class="headerlink" title="局部作用域"></a>局部作用域</h3><p>如果一个变量在函数体内部申明，则该变量的作用域为整个函数体，在函数体外不可引用该变量。由于JavaScript的函数可以嵌套，此时，内部函数可以访问外部函数定义的变量，反过来则不行</p>
-<p>由于JavaScript的变量作用域实际上是函数内部，我们在<code>for</code>循环等语句块中是无法定义具有局部作用域的变量的。为了解决块级作用域，ES6引入了新的关键字<code>let</code>，用<code>let</code>替代<code>var</code>可以申明一个块级作用域的变量：</p>
-<h3 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h3><p>由于<code>var</code>和<code>let</code>申明的是变量，如果要申明一个常量，在ES6之前是不行的，我们通常用全部大写的变量来表示“这是一个常量，不要修改它的值”：</p>
-<pre><code>var PI = 3.14;
-</code></pre><p>ES6标准引入了新的关键字<code>const</code>来定义常量，<code>const</code>与<code>let</code>都具有块级作用域：</p>
-<pre><code>&apos;use strict&apos;;
-const PI = 3.14;
-PI = 3;
-PI //3.14
-</code></pre><p><strong>【补充】</strong>：<br>    const   常量<br>    let     变量，块作用域，不能重复声明覆盖<br>    var     变量，函数作用域，能重复声明覆盖</p>
-<p>赋值之后不会再做修改了就用const，如果后边还会修改就用let，不建议使用var</p>
-<hr>
-<h2 id="3.3">方法</h2>
-
-<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><p>在JavaScript中，对象的定义是这样的：</p>
-<pre><code>var xiaoming = {
-    name: &apos;小明&apos;,
-    birth: 1990,
-    age: function () {
-        var y = new Date().getFullYear();
-        return y - this.birth;
-    }
-};
-</code></pre><p>绑定到对象上的函数称为方法，和普通函数也没啥区别，但是它在内部使用了一个<code>this</code>关键字，在一个方法内部，<code>this</code>是一个特殊变量，它始终指向当前对象，也就是xiaoming这个变量。</p>
-<p>让我们拆开写：</p>
-<pre><code>function getAge() {
-    var y = new Date().getFullYear();
-    return y - this.birth;
-}
-var xiaoming = {
-    name: &apos;小明&apos;,
-    birth: 1990,
-    age: getAge
-};
-xiaoming.age(); // 25, 正常结果
-getAge(); // NaN, 若在strict模式下将得到一个错误
-</code></pre><p>如果以对象的方法形式调用，比如<code>xiaoming.age()</code>，该函数的<code>this</code>指向被调用的对象，也就是<code>xiaoming</code>，这是符合我们预期的。</p>
-<p>如果单独调用函数，比如<code>getAge()</code>，此时，该函数的<code>this</code>指向全局对象，也就是<code>window</code>。</p>
-<p>由于这是一个巨大的设计错误，要想纠正可没那么简单。ECMA决定，在<code>strict</code>模式下让函数的<code>this</code>指向<code>undefined</code>，因此，在<code>strict</code>模式下，你会得到一个错误.</p>
-<h3 id="apply"><a href="#apply" class="headerlink" title="apply"></a>apply</h3><p>要指定函数的this指向哪个对象，可以用函数本身的<code>apply</code>方法，它接收两个参数，第一个参数就是需要绑定的<code>this</code>变量，第二个参数是<code>Array</code>，表示函数本身的参数。</p>
-<p>用<code>apply</code>修复<code>getAge()</code>调用：</p>
-<pre><code>getAge.apply(xiaoming, []); // 25, this指向xiaoming, 参数为空
-</code></pre><p>另一个与<code>apply()</code>类似的方法是<code>call()</code>，唯一区别是：<code>apply()</code>把参数打包成Array再传入；<code>call()</code>把参数按顺序传入。</p>
-<p>比如调用<code>Math.max(3, 5, 4</code>)，分别用<code>apply()</code>和<code>call()</code>实现如下：</p>
-<pre><code>Math.max.apply(null, [3, 5, 4]); // 5
-Math.max.call(null, 3, 5, 4); // 5
+parent.removeChild(child)
 </code></pre><hr>
-<h2 id="3.4">高阶函数</h2>
-
-<p>函数就可以接收另一个函数作为参数，这种函数就称之为高阶函数</p>
-<h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p><code>map()</code>方法定义在JavaScript的Array中，我们调用Array的<code>map()</code>方法，传入我们自己的函数，就得到了一个新的Array作为结果</p>
-<h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce"></a>reduce</h3><p>Array的<code>reduce()</code>把一个函数作用在这个Array的<code>[x1, x2, x3...]</code>上，这个函数必须接收两个参数，<code>reduce()</code>把结果继续和序列的下一个元素做累积计算</p>
-<h3 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h3><p>Array的<code>filter()</code>也接收一个函数。和<code>map()</code>不同的是，<code>filter()</code>把传入的函数依次作用于每个元素，然后根据返回值是<code>true</code>还是<code>false</code>决定保留还是丢弃该元素。通常我们仅使用第一个参数，表示Array的某个元素，还可以接收另外两个参数，表示元素的位置和数组本身</p>
-<h3 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h3><p>Array的<code>sort()</code>方法默认把所有元素先转换为<code>String</code>再排序:</p>
-<pre><code>[10, 20, 1, 2].sort(); // [1, 10, 2, 20]
-</code></pre><p><code>sort()</code>方法也是一个高阶函数，它还可以接收一个比较函数来实现自定义的排序。要按数字大小排序，我们可以自建函数</p>
-<hr>
-<h2 id="3.5">闭包</h2>
-
-<p>高阶函数除了可以接受函数作为参数外，还可以把函数作为结果值返回。</p>
-<p>需要注意的问题是，返回的函数并没有立刻执行，而是直到调用了<code>f()</code>才执行。我们来看一个例子：</p>
-<pre><code>function count() {
-    var arr = [];
-    for (var i=1; i&lt;=3; i++) {
-        arr.push(function () {
-            return i * i;
-        });
-    }
-    return arr;
-}
-
-var results = count();
-var f1 = results[0];
-var f2 = results[1];
-var f3 = results[2];
-</code></pre><p>在上面的例子中，每次循环，都创建了一个新的函数，然后，把创建的3个函数都添加到一个Array中返回了。</p>
-<p>你可能认为调用f1()，f2()和f3()结果应该是1，4，9，但实际结果是：</p>
-<pre><code>f1(); // 16
-f2(); // 16
-f3(); // 16
-</code></pre><p>全部都是16！原因就在于返回的函数引用了变量i，但它并非立刻执行。等到3个函数都返回时，它们所引用的变量i已经变成了4，因此最终结果为16。</p>
-<p>返回闭包时牢记的一点就是：返回函数不要引用任何循环变量，或者后续会发生变化的变量。</p>
-<hr>
-<h2 id="3.6">箭头函数</h2>
-
-<p>ES6标准新增了一种新的函数：<code>Arrow Function</code>（箭头函数）。为什么叫<code>Arrow Function</code>？因为它的定义用的就是一个箭头：</p>
-<pre><code>x =&gt; x * x
-</code></pre><p>上面的箭头函数相当于：</p>
-<pre><code>function (x) {
-    return x * x;
-}
-</code></pre><p>箭头函数相当于匿名函数，并且简化了函数定义。箭头函数有两种格式，一种像上面的，只包含一个表达式，连<code>{ ... }</code>和return都省略掉了。还有一种可以包含多条语句，这时候就不能省略<code>{ ... }</code>和<code>return</code>：</p>
-<pre><code>x =&gt; {
-    ...
-}
-</code></pre><p>如果参数不是一个，就需要用括号<code>()</code>括起来：</p>
-<pre><code>(x, y) =&gt; x * x + y * y
-</code></pre><p>箭头函数看上去是匿名函数的一种简写，但实际上，箭头函数和匿名函数有个明显的区别：箭头函数内部的<code>this</code>是词法作用域，由上下文确定</p>
-<pre><code>var obj = {
-    birth: 1990,
-    getAge: function () {
-        var b = this.birth; // 1990
-        var fn = () =&gt; new Date().getFullYear() - this.birth; // this指向obj对象
-        return fn();
-    }
-};
-obj.getAge(); // 25
-</code></pre><hr>
-<h2 id="3.7">generator</h2>
-
-<p><code>generator</code>（生成器）是ES6标准引入的新的数据类型。一个<code>generator</code>看上去像一个函数，但可以返回多次。</p>
-<p>函数在执行过程中，如果没有遇到<code>return</code>语句（函数末尾如果没有<code>return</code>，就是隐含的<code>return undefined</code>;），控制权无法交回被调用的代码。<code>generator</code>和函数不同的是，<code>generator</code>由<code>function*</code>定义（注意多出的*号），并且，除了<code>return</code>语句，还可以用<code>yield</code>返回多次。</p>
-<pre><code>function* fib(max) {
-    var
-        t,
-        a = 0,
-        b = 1,
-        n = 1;
-    while (n &lt; max) {
-        yield a;
-        t = a + b;
-        a = b;
-        b = t;
-        n ++;
-    }
-    return a;
-}
-</code></pre><p>调用<code>generator</code>对象有两个方法，一是不断地调用<code>generator</code>对象的<code>next()</code>方法</p>
-<pre><code>var f = fib(1);
-f.next(); // {value: 0, done: false} //每次遇到`yield x`;就返回一个对象`{value: x, done: true/false}`
-f.next(); // {value: 1, done: done}
-f.next(); // {value: undefine, done: done} //最后返回一个undefined
-</code></pre><p>第二个方法是直接用<code>for ... of</code>循环迭代<code>generator</code>对象，这种方式不需要我们自己判断done：</p>
-<pre><code>for (var x of fib(5)) {
-    console.log(x); // 依次输出0, 1, 1, 2, 3
-}
-</code></pre><p>function* next_id() {<br>    for (let i=1; i&lt;1000; i++){<br>        yield i;<br>    }<br>}</p>
+<h1 id="Browser-对象"><a href="#Browser-对象" class="headerlink" title="Browser 对象"></a>Browser 对象</h1><h2 id="Window-浏览器对象模型"><a href="#Window-浏览器对象模型" class="headerlink" title="Window 浏览器对象模型"></a>Window 浏览器对象模型</h2><p>浏览器对象模型BOM (Browser Object Model),所有浏览器都支持 window 对象。它表示浏览器窗口</p>
+<p>所有 JavaScript 全局对象、函数以及变量均自动成为 window 对象的成员。全局变量是 window 对象的属性。全局函数是 window 对象的方法。甚至 HTML DOM 的 document 也是 window 对象的属性之一</p>
+<h3 id="Window-属性"><a href="#Window-属性" class="headerlink" title="Window 属性"></a>Window 属性</h3><pre><code>closed            返回窗口是否已被关闭
+defaultStatus    设置或返回窗口状态栏中的默认文本
+document    对 Document 对象的只读引用请参阅 Document 对象
+history        对 History 对象的只读引用。请参数 History 对象
+innerheight    返回窗口的文档显示区的高度
+innerwidth    返回窗口的文档显示区的宽度
+length        设置或返回窗口中的框架数量
+location    用于窗口或框架的 Location 对象。请参阅 Location 对象
+name        设置或返回窗口的名称
+Navigator    对 Navigator 对象的只读引用。请参数 Navigator 对象
+opener        返回对创建此窗口的窗口的引用
+outerheight    返回窗口的外部高度
+outerwidth    返回窗口的外部宽度
+pageXOffset    设置或返回当前页面相对于窗口显示区左上角的 X 位置
+pageYOffset    设置或返回当前页面相对于窗口显示区左上角的 Y 位置
+parent    返回父窗口
+Screen    对 Screen 对象的只读引用。请参数 Screen 对象
+self    返回对当前窗口的引用。等价于 Window 属性
+status    设置窗口状态栏的文本
+top        返回最顶层的先辈窗口
+window    window 属性等价于 self 属性，它包含了对窗口自身的引用
+screenLeft
+screenTop
+screenX
+screenY
+只读整数。声明了窗口的左上角在屏幕上的的 x 坐标和 y 坐标。IE、Safari 和 Opera 支持 screenLeft 和 screenTop，而 Firefox 和 Safari 支持 screenX 和 screenY。
+</code></pre><h3 id="Window-对象方法"><a href="#Window-对象方法" class="headerlink" title="Window 对象方法"></a>Window 对象方法</h3><pre><code>alert()        显示带有一段消息和一个确认按钮的警告框
+blur()        把键盘焦点从顶层窗口移开
+clearInterval()    取消由 setInterval() 设置的 timeout
+clearTimeout()    取消由 setTimeout() 方法设置的 timeout
+close()        关闭浏览器窗口
+confirm()    显示带有一段消息以及确认按钮和取消按钮的对话框
+createPopup()    创建一个 pop-up 窗口
+focus()        把键盘焦点给予一个窗口
+moveBy()    可相对窗口的当前坐标把它移动指定的像素
+moveTo()    把窗口的左上角移动到一个指定的坐标
+open()        打开一个新的浏览器窗口或查找一个已命名的窗口
+print()        打印当前窗口的内容
+prompt()    显示可提示用户输入的对话框
+resizeBy()    按照指定的像素调整窗口的大小
+resizeTo()    把窗口的大小调整到指定的宽度和高度
+scrollBy()    按照指定的像素值来滚动内容
+scrollTo()    把内容滚动到指定的坐标
+setInterval()    按照指定的周期（以毫秒计）来调用函数或计算表达式
+setTimeout()    在指定的毫秒数后调用函数或计算表达式
+</code></pre><h2 id="Screen-对象"><a href="#Screen-对象" class="headerlink" title="Screen 对象"></a>Screen 对象</h2><p>Screen 对象包含有关客户端显示屏幕的信息,对象属性:</p>
+<pre><code>availHeight    返回显示屏幕的高度 (除 Windows 任务栏之外)
+availWidth    返回显示屏幕的宽度 (除 Windows 任务栏之外)
+bufferDepth    设置或返回调色板的比特深度
+colorDepth    返回目标设备或缓冲器上的调色板的比特深度
+deviceXDPI    返回显示屏幕的每英寸水平点数
+deviceYDPI    返回显示屏幕的每英寸垂直点数
+fontSmoothingEnabled    返回用户是否在显示控制面板中启用了字体平滑
+height    返回显示屏幕的高度
+logicalXDPI    返回显示屏幕每英寸的水平方向的常规点数
+logicalYDPI    返回显示屏幕每英寸的垂直方向的常规点数
+pixelDepth    返回显示屏幕的颜色分辨率（比特每像素）
+updateInterval    设置或返回屏幕的刷新率。
+width    返回显示器屏幕的宽度。
+</code></pre><h2 id="History-对象"><a href="#History-对象" class="headerlink" title="History 对象"></a>History 对象</h2><p>History 对象包含用户（在浏览器窗口中）访问过的 URL, 对象属性</p>
+<pre><code>length    返回浏览器历史列表中的 URL 数量
+back()    加载 history 列表中的前一个 URL
+forward()    加载 history 列表中的下一个 URL
+go()    加载 history 列表中的某个具体页面
+</code></pre><h2 id="Navigator-对象"><a href="#Navigator-对象" class="headerlink" title="Navigator 对象"></a>Navigator 对象</h2><p>Navigator 对象包含有关浏览器的信息,对象属性</p>
+<pre><code>appCodeName    返回浏览器的代码名
+appMinorVersion    返回浏览器的次级版本
+appName    返回浏览器的名称
+appVersion    返回浏览器的平台和版本信息
+browserLanguage    返回当前浏览器的语言
+cookieEnabled    返回指明浏览器中是否启用 cookie 的布尔值
+cpuClass    返回浏览器系统的 CPU 等级
+onLine    返回指明系统是否处于脱机模式的布尔值
+platform    返回运行浏览器的操作系统平台
+systemLanguage    返回 OS 使用的默认语言
+userAgent    返回由客户机发送服务器的 user-agent 头部的值
+userLanguage    返回 OS 的自然语言设置
+javaEnabled()    规定浏览器是否启用 Java
+taintEnabled()    规定浏览器是否启用数据污点 (data tainting)
+</code></pre><h2 id="Location-对象"><a href="#Location-对象" class="headerlink" title="Location 对象"></a>Location 对象</h2><p>Location 对象包含有关当前 URL 的信息。对象属性：</p>
+<pre><code>hash    设置或返回从井号 (#) 开始的 URL（锚）
+host    设置或返回主机名和当前 URL 的端口号
+hostname    设置或返回当前 URL 的主机名
+href    设置或返回完整的 URL
+pathname    设置或返回当前 URL 的路径部分
+port    设置或返回当前 URL 的端口号
+protocol    设置或返回当前 URL 的协议
+search    设置或返回从问号 (?) 开始的 URL（查询部分）
+assign()    加载新的文档
+reload()    重新加载当前文档
+replace()    用新的文档替换当前文档
+</code></pre><h2 id="JS-PopupAlert"><a href="#JS-PopupAlert" class="headerlink" title="JS PopupAlert"></a>JS PopupAlert</h2><ul>
+<li>当警告框出现后，用户需要点击确定按钮才能继续进行操作。语法：alert(“文本”)</li>
+<li>确认框用于使用户可以验证或者接受某些信息。如果用户点击确认，那么返回值为 true。如果用户点击取消，那么返回值为 false。语法：confirm(“文本”)</li>
+<li>提示框经常用于提示用户在进入页面前输入某个值。如果用户点击确认，那么返回值为输入的值。如果用户点击取消，那么返回值为 null。语法：prompt(“文本”,”默认值”)</li>
+</ul>
+<h2 id="JS-Timing"><a href="#JS-Timing" class="headerlink" title="JS Timing"></a>JS Timing</h2><p>通过使用 JavaScript，我们有能力作到在一个设定的时间间隔之后来执行代码，而不是在函数被调用后立即执行。我们称之为计时事件。</p>
+<h3 id="setTimeout"><a href="#setTimeout" class="headerlink" title="setTimeout()"></a>setTimeout()</h3><pre><code>var t = setTimeout(code,millisec)
+clearTimeout(t)
+</code></pre><p>setTimeout()在一个设定的时间间隔之后来执行代码，而不是在函数被调用后立即执行。第一个参数<code>code</code>是含有 JavaScript 语句。第二个参数<code>millisec</code>指示从当前起多少毫秒后执行第一个参数</p>
+<p>提示：1000 毫秒等于一秒</p>
+<h3 id="setInterval"><a href="#setInterval" class="headerlink" title="setInterval()"></a>setInterval()</h3><pre><code>var t = setInterval(code,millisec)
+Window.clearInterval(t)
+</code></pre><p>setInterval() 方法可按照指定的周期（以毫秒计）来调用函数或计算表达式，直到 clearInterval() 被调用或窗口被关闭。<code>code</code>    必需。要调用的函数或要执行的代码串。<code>millisec</code>    必须。周期性执行或调用 code 之间的时间间隔，以毫秒计。<br>返回值</p>
+<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>Cookie 以名/值对形式存储，如下所示:</p>
+<pre><code>username=John Doe
+</code></pre><p>当浏览器从服务器上请求 web 页面时， 属于该页面的 cookie 会被添加到该请求中。服务端通过这种方式来获取用户的信息。</p>
+<p>JavaScript 中，创建 cookie 如下所示：</p>
+<pre><code>document.cookie=&quot;username=John Doe; expires=Thu, 18 Dec 2013 12:00:00 GMT; path=/&quot;;
+</code></pre><p>在 JavaScript 中, 可以使用以下代码来读取 cookie：</p>
+<pre><code>var x = document.cookie;
+</code></pre><p>document.cookie 将以字符串的方式返回所有的 cookie，类型格式： cookie1=value; cookie2=value; cookie3=value;</p>
+<p>使用 JavaScript 删除 cookie 非常简单。您只需要设置 expires 参数为过期的时间即可</p>
 
       
     </div>
@@ -640,7 +608,9 @@ f.next(); // {value: undefine, done: done} //最后返回一个undefined
           
             <a href="/tags/JS/" rel="tag"># JS</a>
           
-            <a href="/tags/tutorial/" rel="tag"># tutorial</a>
+            <a href="/tags/DOM/" rel="tag"># DOM</a>
+          
+            <a href="/tags/WINDOW/" rel="tag"># WINDOW</a>
           
         </div>
       
@@ -653,8 +623,8 @@ f.next(); // {value: undefine, done: done} //最后返回一个undefined
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/11/2017-07-11-css-box-model/" rel="next" title="CSS盒子模型">
-                <i class="fa fa-chevron-left"></i> CSS盒子模型
+              <a href="/2017/09/21/2017-09-20-webpage-layout/" rel="next" title="Webpage Layout">
+                <i class="fa fa-chevron-left"></i> Webpage Layout
               </a>
             
           </div>
@@ -662,10 +632,6 @@ f.next(); // {value: undefine, done: done} //最后返回一个undefined
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/15/2017-07-15-JavaScript-Tutorial/" rel="prev" title="JavaScript-对象">
-                JavaScript-对象 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -837,7 +803,7 @@ f.next(); // {value: undefine, done: done} //最后返回一个undefined
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3.0"><span class="nav-number">2.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3.1"><span class="nav-number">2.1.</span> <span class="nav-text">函数定义和调用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定义函数"><span class="nav-number">2.1.1.</span> <span class="nav-text">定义函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调用函数"><span class="nav-number">2.1.2.</span> <span class="nav-text">调用函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3.2"><span class="nav-number">2.2.</span> <span class="nav-text">变量作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量提升"><span class="nav-number">2.2.1.</span> <span class="nav-text">变量提升</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全局作用域"><span class="nav-number">2.2.2.</span> <span class="nav-text">全局作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局部作用域"><span class="nav-number">2.2.3.</span> <span class="nav-text">局部作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常量"><span class="nav-number">2.2.4.</span> <span class="nav-text">常量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3.3"><span class="nav-number">2.3.</span> <span class="nav-text">方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#this"><span class="nav-number">2.3.1.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apply"><span class="nav-number">2.3.2.</span> <span class="nav-text">apply</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3.4"><span class="nav-number">2.4.</span> <span class="nav-text">高阶函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#map"><span class="nav-number">2.4.1.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce"><span class="nav-number">2.4.2.</span> <span class="nav-text">reduce</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter"><span class="nav-number">2.4.3.</span> <span class="nav-text">filter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort"><span class="nav-number">2.4.4.</span> <span class="nav-text">sort</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3.5"><span class="nav-number">2.5.</span> <span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3.6"><span class="nav-number">2.6.</span> <span class="nav-text">箭头函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3.7"><span class="nav-number">2.7.</span> <span class="nav-text">generator</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTML-DOM"><span class="nav-number">1.</span> <span class="nav-text">HTML-DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#查找HTML元素"><span class="nav-number">1.1.</span> <span class="nav-text">查找HTML元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改变-HTML-内容"><span class="nav-number">1.2.</span> <span class="nav-text">改变 HTML 内容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改变-HTML-属性"><span class="nav-number">1.3.</span> <span class="nav-text">改变 HTML 属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改变-HTML-样式"><span class="nav-number">1.4.</span> <span class="nav-text">改变 HTML 样式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM-事件"><span class="nav-number">1.5.</span> <span class="nav-text">DOM 事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加和删除节点（HTML-元素）"><span class="nav-number">1.6.</span> <span class="nav-text">添加和删除节点（HTML 元素）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Browser-对象"><span class="nav-number">2.</span> <span class="nav-text">Browser 对象</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Window-浏览器对象模型"><span class="nav-number">2.1.</span> <span class="nav-text">Window 浏览器对象模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Window-属性"><span class="nav-number">2.1.1.</span> <span class="nav-text">Window 属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Window-对象方法"><span class="nav-number">2.1.2.</span> <span class="nav-text">Window 对象方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Screen-对象"><span class="nav-number">2.2.</span> <span class="nav-text">Screen 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History-对象"><span class="nav-number">2.3.</span> <span class="nav-text">History 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Navigator-对象"><span class="nav-number">2.4.</span> <span class="nav-text">Navigator 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Location-对象"><span class="nav-number">2.5.</span> <span class="nav-text">Location 对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS-PopupAlert"><span class="nav-number">2.6.</span> <span class="nav-text">JS PopupAlert</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS-Timing"><span class="nav-number">2.7.</span> <span class="nav-text">JS Timing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#setTimeout"><span class="nav-number">2.7.1.</span> <span class="nav-text">setTimeout()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#setInterval"><span class="nav-number">2.7.2.</span> <span class="nav-text">setInterval()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie"><span class="nav-number">2.8.</span> <span class="nav-text">Cookie</span></a></li></ol></li></ol></div>
             
 
           </div>
