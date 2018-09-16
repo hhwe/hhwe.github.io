@@ -41,17 +41,23 @@
 
 * [开发](dev/README.md)
     * [python](dev/python/README.md)
-        * [Celery压力测试](ops/docker/Celery压力测试.md)
-        * [Celery文档总结(一)](ops/docker/Celery文档总结(一).md)
-        * [Celery文档总结(二)](ops/docker/Celery文档总结(三).md)
-        * [Celery文档总结(三)](ops/docker/Celery文档总结(二).md)
-        * [Celery测试和调优](ops/docker/Celery测试和调优.md)
-        * [Python-Web应用部署](ops/docker/Python-Web应用部署.md)
+        * [15个python面试要点](dev/python/15个python面试要点.md)
+        * [Python编码](dev/python/Python编码.md)
+        * [Python面试](dev/python/Python面试.md)
+        * [requests源码解读](dev/python/requests源码解读.md)
+        * [subprocess碰到的各种问题](dev/python/subprocess碰到的各种问题.md)
+        * [Celery压力测试](dev/docker/Celery压力测试.md)
+        * [Celery文档总结(一)](dev/docker/Celery文档总结(一).md)
+        * [Celery文档总结(二)](dev/docker/Celery文档总结(三).md)
+        * [Celery文档总结(三)](dev/docker/Celery文档总结(二).md)
+        * [Celery测试和调优](dev/docker/Celery测试和调优.md)
+        * [Python-Web应用部署](dev/docker/Python-Web应用部署.md)
     * [golang](dev/golang/README.md)
-        * [面试问题](dev/golang/Questions.md)
-    * [javascript](dev/javascript/README.md)
-        * [面试问题](dev/javascript/Questions.md)
-    * [面试问题](dev/Questions.md)
+        * [Build-a-web-application-in-Go](dev/golang/Build-a-web-application-in-Go.md)
+        * [defer-panic-recover](dev/golang/defer-panic-recover.md)
+        * [Golang2错误处理](dev/golang/Golang2错误处理.md)
+        * [Go-maps-in-action](dev/golang/Go-maps-in-action.md)
+        * [Package-Container](dev/golang/Package-Container.md)
 
 * [运维](ops/README.md)
     * [docker](ops/docker/README.md)
@@ -87,7 +93,6 @@
 │       └── 各种软件命令.md
 ├── dev
 │   ├── golang
-│   │   ├── Build-a-web-application-in-Go-1.md
 │   │   ├── Build-a-web-application-in-Go.md
 │   │   ├── defer-panic-recover.md
 │   │   ├── Golang2错误处理.md
