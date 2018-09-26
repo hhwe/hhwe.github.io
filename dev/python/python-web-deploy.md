@@ -1,3 +1,5 @@
+# Python项目部署
+
 python的web应用部署方式本人在项目中使用过的:
 + flask + gunicorn + supervisor + nginx
 + docker
