@@ -67,7 +67,7 @@
     - [HTTPs](#https)
         - [加密](#加密)
             - [1. 对称密钥加密](#1-对称密钥加密)
-        - [2. 公开密钥加密](#2-公开密钥加密)
+            - [2. 公开密钥加密](#2-公开密钥加密)
             - [3. HTTPs 采用的加密方式](#3-https-采用的加密方式)
         - [认证](#认证)
         - [完整性保护](#完整性保护)
@@ -231,13 +231,13 @@ CONNECT www.example.com:443 HTTP/1.1
 
 服务器返回的  **响应报文**  中第一行为状态行，包含了状态码以及原因短语，用来告知客户端请求的结果。
 
-| 状态码 | 类别 | 原因短语 |
-| :---: | :---: | :---: |
-| 1XX | Informational（信息性状态码） | 接收的请求正在处理 |
-| 2XX | Success（成功状态码） | 请求正常处理完毕 |
-| 3XX | Redirection（重定向状态码） | 需要进行附加操作以完成请求 |
-| 4XX | Client Error（客户端错误状态码） | 服务器无法处理请求 |
-| 5XX | Server Error（服务器错误状态码） | 服务器处理请求出错 |
+| 状态码 |               类别               |          原因短语          |
+| :----: | :------------------------------: | :------------------------: |
+|  1XX   |  Informational（信息性状态码）   |     接收的请求正在处理     |
+|  2XX   |      Success（成功状态码）       |      请求正常处理完毕      |
+|  3XX   |   Redirection（重定向状态码）    | 需要进行附加操作以完成请求 |
+|  4XX   | Client Error（客户端错误状态码） |     服务器无法处理请求     |
+|  5XX   | Server Error（服务器错误状态码） |     服务器处理请求出错     |
 
 ### 1XX 信息
 
@@ -278,70 +278,70 @@ CONNECT www.example.com:443 HTTP/1.1
 
 ### 通用首部字段
 
-| 首部字段名 | 说明 |
-| :--: | :--: |
-| Cache-Control | 控制缓存的行为 |
-| Connection | 控制不再转发给代理的首部字段、管理持久连接|
-| Date | 创建报文的日期时间 |
-| Pragma | 报文指令 |
-| Trailer | 报文末端的首部一览 |
-| Transfer-Encoding | 指定报文主体的传输编码方式 |
-| Upgrade | 升级为其他协议 |
-| Via | 代理服务器的相关信息 |
-| Warning | 错误通知 |
+|    首部字段名     |                    说明                    |
+| :---------------: | :----------------------------------------: |
+|   Cache-Control   |               控制缓存的行为               |
+|    Connection     | 控制不再转发给代理的首部字段、管理持久连接 |
+|       Date        |             创建报文的日期时间             |
+|      Pragma       |                  报文指令                  |
+|      Trailer      |             报文末端的首部一览             |
+| Transfer-Encoding |         指定报文主体的传输编码方式         |
+|      Upgrade      |               升级为其他协议               |
+|        Via        |            代理服务器的相关信息            |
+|      Warning      |                  错误通知                  |
 
 ### 请求首部字段
 
-| 首部字段名 | 说明 |
-| :--: | :--: |
-| Accept | 用户代理可处理的媒体类型 |
-| Accept-Charset | 优先的字符集 |
-| Accept-Encoding | 优先的内容编码 |
-| Accept-Language | 优先的语言（自然语言） |
-| Authorization | Web 认证信息 |
-| Expect | 期待服务器的特定行为 |
-| From | 用户的电子邮箱地址 |
-| Host | 请求资源所在服务器 |
-| If-Match | 比较实体标记（ETag） |
-| If-Modified-Since | 比较资源的更新时间 |
-| If-None-Match | 比较实体标记（与 If-Match 相反） |
-| If-Range | 资源未更新时发送实体 Byte 的范围请求 |
+|     首部字段名      |                      说明                       |
+| :-----------------: | :---------------------------------------------: |
+|       Accept        |            用户代理可处理的媒体类型             |
+|   Accept-Charset    |                  优先的字符集                   |
+|   Accept-Encoding   |                 优先的内容编码                  |
+|   Accept-Language   |             优先的语言（自然语言）              |
+|    Authorization    |                  Web 认证信息                   |
+|       Expect        |              期待服务器的特定行为               |
+|        From         |               用户的电子邮箱地址                |
+|        Host         |               请求资源所在服务器                |
+|      If-Match       |              比较实体标记（ETag）               |
+|  If-Modified-Since  |               比较资源的更新时间                |
+|    If-None-Match    |        比较实体标记（与 If-Match 相反）         |
+|      If-Range       |      资源未更新时发送实体 Byte 的范围请求       |
 | If-Unmodified-Since | 比较资源的更新时间（与 If-Modified-Since 相反） |
-| Max-Forwards | 最大传输逐跳数 |
-| Proxy-Authorization | 代理服务器要求客户端的认证信息 |
-| Range | 实体的字节范围请求 |
-| Referer | 对请求中 URI 的原始获取方 |
-| TE | 传输编码的优先级 |
-| User-Agent | HTTP 客户端程序的信息 |
+|    Max-Forwards     |                 最大传输逐跳数                  |
+| Proxy-Authorization |         代理服务器要求客户端的认证信息          |
+|        Range        |               实体的字节范围请求                |
+|       Referer       |            对请求中 URI 的原始获取方            |
+|         TE          |                传输编码的优先级                 |
+|     User-Agent      |              HTTP 客户端程序的信息              |
 
 ### 响应首部字段
 
-| 首部字段名 | 说明 |
-| :--: | :--: |
-| Accept-Ranges | 是否接受字节范围请求 |
-| Age | 推算资源创建经过时间 |
-| ETag | 资源的匹配信息 |
-| Location | 令客户端重定向至指定 URI |
+|     首部字段名     |             说明             |
+| :----------------: | :--------------------------: |
+|   Accept-Ranges    |     是否接受字节范围请求     |
+|        Age         |     推算资源创建经过时间     |
+|        ETag        |        资源的匹配信息        |
+|      Location      |   令客户端重定向至指定 URI   |
 | Proxy-Authenticate | 代理服务器对客户端的认证信息 |
-| Retry-After | 对再次发起请求的时机要求 |
-| Server | HTTP 服务器的安装信息 |
-| Vary | 代理服务器缓存的管理信息 |
-| WWW-Authenticate | 服务器对客户端的认证信息 |
+|    Retry-After     |   对再次发起请求的时机要求   |
+|       Server       |    HTTP 服务器的安装信息     |
+|        Vary        |   代理服务器缓存的管理信息   |
+|  WWW-Authenticate  |   服务器对客户端的认证信息   |
 
 ### 实体首部字段
 
-| 首部字段名 | 说明 |
-| :--: | :--: |
-| Allow | 资源可支持的 HTTP 方法 |
+|    首部字段名    |          说明          |
+| :--------------: | :--------------------: |
+|      Allow       | 资源可支持的 HTTP 方法 |
 | Content-Encoding | 实体主体适用的编码方式 |
-| Content-Language | 实体主体的自然语言 |
-| Content-Length | 实体主体的大小 |
-| Content-Location | 替代对应资源的 URI |
-| Content-MD5 | 实体主体的报文摘要 |
-| Content-Range | 实体主体的位置范围 |
-| Content-Type | 实体主体的媒体类型 |
-| Expires | 实体主体过期的日期时间 |
-| Last-Modified | 资源的最后修改日期时间 |
+| Content-Language |   实体主体的自然语言   |
+|  Content-Length  |     实体主体的大小     |
+| Content-Location |   替代对应资源的 URI   |
+|   Content-MD5    |   实体主体的报文摘要   |
+|  Content-Range   |   实体主体的位置范围   |
+|   Content-Type   |   实体主体的媒体类型   |
+|     Expires      | 实体主体过期的日期时间 |
+|  Last-Modified   | 资源的最后修改日期时间 |
 
 ## 具体应用
 
@@ -560,8 +560,8 @@ HTTP/1.1 开始默认是长连接的，如果要断开连接，需要由客户�
 
 它存在以下问题：
 
-- 器对浏览器并非全知全能。即便是有了客户端示意扩展，也依然无法获取关于浏览器能力的全部信息。
-- 端提供的信息相当冗长（HTTP/2 协议的首部压缩机制缓解了这个问题），并且存在隐私风险（HTTP 指纹识别技术）。
+- 服务器对浏览器并非全知全能。即便是有了客户端示意扩展，也依然无法获取关于浏览器能力的全部信息。
+- 客户端提供的信息相当冗长（HTTP/2 协议的首部压缩机制缓解了这个问题），并且存在隐私风险（HTTP 指纹识别技术）。
 - 给定的资源需要返回不同的展现形式，共享缓存的效率会降低，而服务器端的实现会越来越复杂。
 
 （二）代理驱动型协商
@@ -698,7 +698,7 @@ HTTPs 并不是新协议，而是让 HTTP 先和 SSL（Secure Sockets Layer）�
 
 <div align="center"> <img src="../../pics//7fffa4b8-b36d-471f-ad0c-a88ee763bb76.png" width="600"/> </div>
 
-### 2. 公开密钥加密
+#### 2. 公开密钥加密
 
 公开密钥加密（Public-Key Encryption），也称为非对称密钥加密，使用一对密钥用于加密和解密，分别为公开密钥和私有密钥。公开密钥所有人都可以获得，通信发送方获得接收方的公开密钥之后，就可以使用公开密钥进行加密，接收方收到通信内容后使用私有密钥解密。
 
