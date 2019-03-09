@@ -64,7 +64,7 @@ Redis 支持很多特性，例如将内存中的数据持久化到硬盘中，�
 
 ## 1. STRING
 
-<div align="center"> <img src="../pics//6019b2db-bc3e-4408-b6d8-96025f4481d6.png" width="400"/> </div><br>
+<div align="center"> <img src="../../pics//6019b2db-bc3e-4408-b6d8-96025f4481d6.png" width="400"/> </div><br>
 
 ```html
 > set hello world
@@ -79,7 +79,7 @@ OK
 
 ## 2. LIST
 
-<div align="center"> <img src="../pics//fb327611-7e2b-4f2f-9f5b-38592d408f07.png" width="400"/> </div><br>
+<div align="center"> <img src="../../pics//fb327611-7e2b-4f2f-9f5b-38592d408f07.png" width="400"/> </div><br>
 
 ```html
 > rpush list-key item
@@ -107,7 +107,7 @@ OK
 
 ## 3. SET
 
-<div align="center"> <img src="../pics//cd5fbcff-3f35-43a6-8ffa-082a93ce0f0e.png" width="400"/> </div><br>
+<div align="center"> <img src="../../pics//cd5fbcff-3f35-43a6-8ffa-082a93ce0f0e.png" width="400"/> </div><br>
 
 ```html
 > sadd set-key item
@@ -141,7 +141,7 @@ OK
 
 ## 4. HASH
 
-<div align="center"> <img src="../pics//7bd202a7-93d4-4f3a-a878-af68ae25539a.png" width="400"/> </div><br>
+<div align="center"> <img src="../../pics//7bd202a7-93d4-4f3a-a878-af68ae25539a.png" width="400"/> </div><br>
 
 ```html
 > hset hash-key sub-key1 value1
@@ -172,7 +172,7 @@ OK
 
 ## 5. ZSET
 
-<div align="center"> <img src="../pics//1202b2d6-9469-4251-bd47-ca6034fb6116.png" width="400"/> </div><br>
+<div align="center"> <img src="../../pics//1202b2d6-9469-4251-bd47-ca6034fb6116.png" width="400"/> </div><br>
 
 ```html
 > zadd zset-key 728 member1
@@ -219,7 +219,7 @@ Redis 可以为每个键设置过期时间，当键过期时，会自动删除�
 - 观察者模式中，观察者和主题都知道对方的存在；而在发布与订阅模式中，发布者与订阅者不知道对方的存在，它们之间通过频道进行通信。
 - 观察者模式是同步的，当事件触发时，主题会去调度观察者的方法；而发布与订阅模式是异步的；
 
-<div align="center"> <img src="../pics//bee1ff1d-c80f-4b3c-b58c-7073a8896ab2.jpg" width="400"/> </div><br>
+<div align="center"> <img src="../../pics//bee1ff1d-c80f-4b3c-b58c-7073a8896ab2.jpg" width="400"/> </div><br>
 
 发布与订阅有一些问题，很少使用它，而是使用替代的解决方案。问题如下：
 
@@ -282,7 +282,7 @@ always 选项会严重减低服务器的性能；everysec 选项比较合适，�
 
 随着负载不断上升，主服务器可能无法很快地更新所有从服务器，或者重新连接和重新同步从服务器将导致系统超载。为了解决这个问题，可以创建一个中间层来分担主服务器的复制工作。中间层的服务器是最上层服务器的从服务器，又是最下层服务器的主服务器。
 
-<div align="center"> <img src="../pics//395a9e83-b1a1-4a1d-b170-d081e7bb5bab.png" width="600"/> </div><br>
+<div align="center"> <img src="../../pics//395a9e83-b1a1-4a1d-b170-d081e7bb5bab.png" width="600"/> </div><br>
 
 # 八、处理故障
 
@@ -372,7 +372,7 @@ def main():
 
 从事件处理的角度来看，服务器运行流程如下：
 
-<div align="center"> <img src="../pics//dda1608d-26e0-4f10-8327-a459969b150a.png" width=""/> </div><br>
+<div align="center"> <img src="../../pics//dda1608d-26e0-4f10-8327-a459969b150a.png" width=""/> </div><br>
 
 # 十一、Redis 与 Memcached 的区别
 
@@ -447,7 +447,7 @@ Redis 这种内存数据库能支持计数器频繁的读写操作。
 
 Redis 没有关系型数据库中的表这一概念来将同类型的数据存放在一起，而是使用命名空间的方式来实现这一功能。键名的前面部分存储命名空间，后面部分的内容存储 ID，通常使用 : 来进行分隔。例如下面的 HASH 的键名为 article:92617，其中 article 为命名空间，ID 为 92617。
 
-<div align="center"> <img src="../pics//7c54de21-e2ff-402e-bc42-4037de1c1592.png" width="400"/> </div><br>
+<div align="center"> <img src="../../pics//7c54de21-e2ff-402e-bc42-4037de1c1592.png" width="400"/> </div><br>
 
 ## 点赞功能
 
@@ -455,13 +455,13 @@ Redis 没有关系型数据库中的表这一概念来将同类型的数据存�
 
 为了节约内存，规定一篇文章发布满一周之后，就不能再对它进行投票，而文章的已投票集合也会被删除，可以为文章的已投票集合设置一个一周的过期时间就能实现这个规定。
 
-<div align="center"> <img src="../pics//485fdf34-ccf8-4185-97c6-17374ee719a0.png" width="400"/> </div><br>
+<div align="center"> <img src="../../pics//485fdf34-ccf8-4185-97c6-17374ee719a0.png" width="400"/> </div><br>
 
 ## 对文章进行排序
 
 为了按发布时间和点赞数进行排序，可以建立一个文章发布时间的有序集合和一个文章点赞数的有序集合。（下图中的 score 就是这里所说的点赞数；下面所示的有序集合分值并不直接是时间和点赞数，而是根据时间和点赞数间接计算出来的）
 
-<div align="center"> <img src="../pics//f7d170a3-e446-4a64-ac2d-cb95028f81a8.png" width="800"/> </div><br>
+<div align="center"> <img src="../../pics//f7d170a3-e446-4a64-ac2d-cb95028f81a8.png" width="800"/> </div><br>
 
 # 参考资料
 

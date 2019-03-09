@@ -165,7 +165,7 @@ Linux 发行版是 Linux 内核及各种应用软件的集成版本。
 - 编辑模式（Insert mode）：按下 "i" 等按键之后进入，可以对文本进行编辑；
 - 指令列模式（Bottom-line mode）：按下 ":" 按键之后进入，用于保存退出等操作。
 
-<div align="center"> <img src="../pics//5942debd-fc00-477a-b390-7c5692cc8070.jpg" width="400"/> </div><br>
+<div align="center"> <img src="../../pics//5942debd-fc00-477a-b390-7c5692cc8070.jpg" width="400"/> </div><br>
 
 在指令列模式下，有以下命令用于离开或者保存文件。
 
@@ -206,7 +206,7 @@ Hard Disk Drives(HDD) 俗称硬盘，具有以下结构：
 5. 制动手臂（Actuator arm）：用于在磁道之间移动磁头；
 6. 主轴（Spindle）：使整个盘面转动。
 
-<div align="center"> <img src="../pics//014fbc4d-d873-4a12-b160-867ddaed9807.jpg" width=""/> </div><br>
+<div align="center"> <img src="../../pics//014fbc4d-d873-4a12-b160-867ddaed9807.jpg" width=""/> </div><br>
 
 ## 磁盘接口
 
@@ -214,25 +214,25 @@ Hard Disk Drives(HDD) 俗称硬盘，具有以下结构：
 
 IDE（ATA）全称 Advanced Technology Attachment，接口速度最大为 133MB/s，因为并口线的抗干扰性太差，且排线占用空间较大，不利电脑内部散热，已逐渐被 SATA 所取代。
 
-<div align="center"> <img src="../pics//924914c0-660c-4e4a-bbc0-1df1146e7516.jpg" width="400"/> </div><br>
+<div align="center"> <img src="../../pics//924914c0-660c-4e4a-bbc0-1df1146e7516.jpg" width="400"/> </div><br>
 
 ### 2. SATA
 
 SATA 全称 Serial ATA，也就是使用串口的 ATA 接口，因抗干扰性强，且对数据线的长度要求比 ATA 低很多，支持热插拔等功能，SATA-II 的接口速度为 300MiB/s，而新的 SATA-III 标准可达到 600MiB/s 的传输速度。SATA 的数据线也比 ATA 的细得多，有利于机箱内的空气流通，整理线材也比较方便。
 
-<div align="center"> <img src="../pics//f9f2a16b-4843-44d1-9759-c745772e9bcf.jpg" width=""/> </div><br>
+<div align="center"> <img src="../../pics//f9f2a16b-4843-44d1-9759-c745772e9bcf.jpg" width=""/> </div><br>
 
 ### 3. SCSI
 
 SCSI 全称是 Small Computer System Interface（小型机系统接口），经历多代的发展，从早期的 SCSI-II，到目前的 Ultra320 SCSI 以及 Fiber-Channel（光纤通道），接口型式也多种多样。SCSI 硬盘广为工作站级个人电脑以及服务器所使用，因此会使用较为先进的技术，如碟片转速 15000rpm 的高转速，且资料传输时 CPU 占用率较低，但是单价也比相同容量的 ATA 及 SATA 硬盘更加昂贵。
 
-<div align="center"> <img src="../pics//f0574025-c514-49f5-a591-6d6a71f271f7.jpg" width=""/> </div><br>
+<div align="center"> <img src="../../pics//f0574025-c514-49f5-a591-6d6a71f271f7.jpg" width=""/> </div><br>
 
 ### 4. SAS
 
 SAS（Serial Attached SCSI）是新一代的 SCSI 技术，和 SATA 硬盘相同，都是采取序列式技术以获得更高的传输速度，可达到 6Gb/s。此外也透过缩小连接线改善系统内部空间等。
 
-<div align="center"> <img src="../pics//6729baa0-57d7-4817-b3aa-518cbccf824c.jpg" width=""/> </div><br>
+<div align="center"> <img src="../../pics//6729baa0-57d7-4817-b3aa-518cbccf824c.jpg" width=""/> </div><br>
 
 ## 磁盘的文件名
 
@@ -267,7 +267,7 @@ GPT 没有扩展分区概念，都是主分区，每个 LAB 可以分 4 个分�
 
 MBR 不支持 2.2 TB 以上的硬盘，GPT 则最多支持到 2<sup>33</sup> TB = 8 ZB。
 
-<div align="center"> <img src="../pics//GUID_Partition_Table_Scheme.svg.png" width="400"/> </div><br>
+<div align="center"> <img src="../../pics//GUID_Partition_Table_Scheme.svg.png" width="400"/> </div><br>
 
 ## 开机检测程序
 
@@ -277,13 +277,13 @@ BIOS（Basic Input/Output System，基本输入输出系统），它是一个固
 
 BIOS 是开机的时候计算机执行的第一个程序，这个程序知道可以开机的磁盘，并读取磁盘第一个扇区的 MBR，由 MBR 执行 MBR 中的开机管理程序，这个开机管理程序会加载操作系统的核心文件。
 
-<div align="center"> <img src="../pics//50831a6f-2777-46ea-a571-29f23c85cc21.jpg"/> </div><br>
+<div align="center"> <img src="../../pics//50831a6f-2777-46ea-a571-29f23c85cc21.jpg"/> </div><br>
 
 MBR 中的开机管理程序提供以下功能：选单、载入核心文件以及转交其它开机管理程序。转交这个功能可以用来实现了多重引导，只需要将另一个操作系统的开机管理程序安装在其它分区的启动扇区上，在启动 MBR 中的开机管理程序时，就可以通过选单选择启动当前的操作系统或者转交给其它开机管理程序从而启动另一个操作系统。
 
 下图中，第一扇区的 MBR 中的开机管理程序提供了两个选单：M1、M2，M1 指向了 Windows 操作系统，而 M2 指向其它分区的启动扇区，里面包含了另外一个开机管理程序，提供了一个指向 Linux 的选单。
 
-<div align="center"> <img src="../pics//f900f266-a323-42b2-bc43-218fdb8811a8.jpg" width="600"/> </div><br>
+<div align="center"> <img src="../../pics//f900f266-a323-42b2-bc43-218fdb8811a8.jpg" width="600"/> </div><br>
 
 安装多重引导，最好先安装 Windows 再安装 Linux。因为安装 Windows 时会覆盖掉 MBR，而 Linux 可以选择将开机管理程序安装在 MBR 或者其它分区的启动扇区，并且可以设置开机管理程序的选单。
 
@@ -299,7 +299,7 @@ BIOS 不可以读取 GPT 分区表，而 UEFI 可以。
 
 ## 组成
 
-<div align="center"> <img src="../pics//BSD_disk.png" width="800"/> </div><br>
+<div align="center"> <img src="../../pics//BSD_disk.png" width="800"/> </div><br>
 
 最主要的几个组成部分如下：
 
@@ -315,11 +315,11 @@ BIOS 不可以读取 GPT 分区表，而 UEFI 可以。
 
 对于 Ext2 文件系统，当要读取一个文件的内容时，先在 inode 中去查找文件内容所在的所有 block，然后把所有 block 的内容读出来。
 
-<div align="center"> <img src="../pics//83185315-793a-453a-a927-5e8d92b5c0ef.jpg"/> </div><br>
+<div align="center"> <img src="../../pics//83185315-793a-453a-a927-5e8d92b5c0ef.jpg"/> </div><br>
 
 而对于 FAT 文件系统，它没有 inode，每个 block 中存储着下一个 block 的编号。
 
-<div align="center"> <img src="../pics//075e1977-7846-4928-96c8-bb5b0268693c.jpg"/> </div><br>
+<div align="center"> <img src="../../pics//075e1977-7846-4928-96c8-bb5b0268693c.jpg"/> </div><br>
 
 ## 磁盘碎片
 
@@ -356,7 +356,7 @@ inode 具有以下特点：
 
 inode 中记录了文件内容所在的 block 编号，但是每个 block 非常小，一个大文件随便都需要几十万的 block。而一个 inode 大小有限，无法直接引用这么多 block 编号。因此引入了间接、双间接、三间接引用。间接引用是指，让 inode 记录的引用 block 块当成 inode 用来记录引用信息。
 
-<div align="center"> <img src="../pics//inode_with_signatures.jpg" width="600"/> </div><br>
+<div align="center"> <img src="../../pics//inode_with_signatures.jpg" width="600"/> </div><br>
 
 ## 目录
 
@@ -380,7 +380,7 @@ ext3/ext4 文件系统引入了日志功能，可以利用日志来修复文件�
 - /usr (unix software resource)：所有系统默认软件都会安装到这个目录；
 - /var (variable)：存放系统或程序运行过程中的数据文件。
 
-<div align="center"> <img src="../pics//linux-filesystem.png" width=""/> </div><br>
+<div align="center"> <img src="../../pics//linux-filesystem.png" width=""/> </div><br>
 
 # 五、文件
 
@@ -674,7 +674,7 @@ example: find . -name "shadow*"
 
 +4、4 和 -4 的指示的时间范围如下：
 
-<div align="center"> <img src="../pics//658fc5e7-79c0-4247-9445-d69bf194c539.png" width=""/> </div><br>
+<div align="center"> <img src="../../pics//658fc5e7-79c0-4247-9445-d69bf194c539.png" width=""/> </div><br>
 
 （二）与文件拥有者和所属群组有关的选项
 
@@ -1178,7 +1178,7 @@ daemon 2
 
 ## 进程状态
 
-<div align="center"> <img src="../pics//76a49594323247f21c9b3a69945445ee.png" width=""/> </div><br>
+<div align="center"> <img src="../../pics//76a49594323247f21c9b3a69945445ee.png" width=""/> </div><br>
 
 | 状态 | 说明 |
 | :---: | --- |
@@ -1195,7 +1195,7 @@ daemon 2
 - 得到 SIGCHLD 信号；
 - waitpid() 或者 wait() 调用会返回。
 
-<div align="center"> <img src="../pics//flow.png" width=""/> </div><br>
+<div align="center"> <img src="../../pics//flow.png" width=""/> </div><br>
 
 其中子进程发送的 SIGCHLD 信号包含了子进程的信息，包含了进程 ID、进程状态、进程使用 CPU 的时间等。
 
@@ -1266,7 +1266,7 @@ I/O Multiplexing 又被称为 Event Driven I/O，它可以让单个进程具有�
 
 同步异步是获知 I/O 完成的方式，同步需要时刻关心 I/O 是否已经完成，异步无需主动关心，在 I/O 完成时它会收到通知。
 
-<div align="center"> <img src="../pics//1a231f2a-5c2f-4231-8e0f-915aa5894347.jpg" width=""/> </div><br>
+<div align="center"> <img src="../../pics//1a231f2a-5c2f-4231-8e0f-915aa5894347.jpg" width=""/> </div><br>
 
 
 ### 1. 同步-阻塞
@@ -1275,7 +1275,7 @@ I/O Multiplexing 又被称为 Event Driven I/O，它可以让单个进程具有�
 
 应该注意到，在阻塞的过程中，其他程序还可以执行，因此阻塞不意味着整个操作系统都被阻塞。因为其他程序还可以执行，因此不消耗 CPU 时间，这种模型的执行效率会比较高。
 
-<div align="center"> <img src="../pics//5e9b10f3-9504-4483-9667-d4770adebf9f.png" width=""/> </div><br>
+<div align="center"> <img src="../../pics//5e9b10f3-9504-4483-9667-d4770adebf9f.png" width=""/> </div><br>
 
 ### 2. 同步-非阻塞
 
@@ -1283,13 +1283,13 @@ I/O Multiplexing 又被称为 Event Driven I/O，它可以让单个进程具有�
 
 由于 CPU 要处理更多的用户程序的询问，因此这种模型的效率是比较低的。
 
-<div align="center"> <img src="../pics//1582217a-ed46-4cac-811e-90d13a65163b.png" width=""/> </div><br>
+<div align="center"> <img src="../../pics//1582217a-ed46-4cac-811e-90d13a65163b.png" width=""/> </div><br>
 
 ### 3. 异步
 
 该模式下，I/O 操作会立即返回，之后可以处理其它操作，并且在 I/O 完成时会收到一个通知，此时会中断正在处理的操作，然后继续之前的操作。
 
-<div align="center"> <img src="../pics//b4b29aa9-dd2c-467b-b75f-ca6541cb25b5.jpg" width=""/> </div><br>
+<div align="center"> <img src="../../pics//b4b29aa9-dd2c-467b-b75f-ca6541cb25b5.jpg" width=""/> </div><br>
 
 ## select poll epoll
 

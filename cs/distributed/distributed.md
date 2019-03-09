@@ -47,7 +47,7 @@
 
 在分布式系统中，一个请求除了成功和失败两种状态，还存在着超时状态。
 
-<div align="center"> <img src="../pics//b0e8ef47-2f23-4379-8c64-10d5cb44d438.jpg"/> </div><br>
+<div align="center"> <img src="../../pics//b0e8ef47-2f23-4379-8c64-10d5cb44d438.jpg"/> </div><br>
 
 可以将服务器的操作设计为具有  **幂等性** ，即执行多次的结果与执行一次的结果相同。如果使用这种方式，当出现超时的时候，可以不断地重新请求直到成功。
 
@@ -97,11 +97,11 @@
 
 Distributed Hash Table（DHT）：对于哈希空间  [0, 2<sup>n</sup>-1]，将该哈希空间看成一个哈希环，将每个节点都配置到哈希环上。每个数据对象通过哈希取模得到哈希值之后，存放到哈希环中顺时针方向第一个大于等于该哈希值的节点上。
 
-<div align="center"> <img src="../pics//d2d34239-e7c1-482b-b33e-3170c5943556.jpg"/> </div><br>
+<div align="center"> <img src="../../pics//d2d34239-e7c1-482b-b33e-3170c5943556.jpg"/> </div><br>
 
 一致性哈希的优点是在加入或者删除节点时只会影响到哈希环中相邻的节点，例如下图中新增节点 X，只需要将数据对象 C 重新存放到节点 X 上即可，对于节点 A、B、D 都没有影响。
 
-<div align="center"> <img src="../pics//91ef04e4-923a-4277-99c0-6be4ce81e5ac.jpg"/> </div><br>
+<div align="center"> <img src="../../pics//91ef04e4-923a-4277-99c0-6be4ce81e5ac.jpg"/> </div><br>
 
 ## 顺序分布
 
@@ -111,7 +111,7 @@ Distributed Hash Table（DHT）：对于哈希空间  [0, 2<sup>n</sup>-1]，将
 
 引入 Meta 表是为了支持更大的集群规模，它将原来的一层索引结分成两层，Meta 维护着 User 子表所在的节点，从而减轻 Root 节点的负担。
 
-<div align="center"> <img src="../pics//8f64e9c5-7682-4feb-9312-dea09514e160.jpg"/> </div><br>
+<div align="center"> <img src="../../pics//8f64e9c5-7682-4feb-9312-dea09514e160.jpg"/> </div><br>
 
 # 三、负载均衡
 
@@ -127,7 +127,7 @@ Distributed Hash Table（DHT）：对于哈希空间  [0, 2<sup>n</sup>-1]，将
 
 多个副本通常有一个为主副本，其它为备副本。主副本用来处理写请求，备副本主要用来处理读请求，实现读写分离。主副本将同步操作日志发送给备副本，备副本通过回放操作日志获取最新修改。
 
-<div align="center"> <img src="../pics//44e4a7ab-215c-41a1-8e34-f55f6c09e517.jpg"/> </div><br>
+<div align="center"> <img src="../../pics//44e4a7ab-215c-41a1-8e34-f55f6c09e517.jpg"/> </div><br>
 
 主备副本之间有两种复制协议，一种是强同步复制协议，一种是异步复制协议。
 
@@ -153,7 +153,7 @@ Distributed Hash Table（DHT）：对于哈希空间  [0, 2<sup>n</sup>-1]，将
 
 在设计分布式系统时，需要根据实际需求弱化某一要求。因此就有了下图中的三种设计：CA、CP 和 AP。
 
-<div align="center"> <img src="../pics//992faced-afcf-414d-b801-9c16d6570fec.jpg" width="500"/> </div><br>
+<div align="center"> <img src="../../pics//992faced-afcf-414d-b801-9c16d6570fec.jpg" width="500"/> </div><br>
 
 需要注意的是，分区容忍性必不可少，因为需要总是假设网络是不可靠的。因此实际上设计分布式系统需要在一致性和可用性之间做权衡。
 
@@ -161,7 +161,7 @@ Distributed Hash Table（DHT）：对于哈希空间  [0, 2<sup>n</sup>-1]，将
 
 BASE 是 Basically Available（基本可用）、Soft State（软状态）和 Eventually Consistent（最终一致性）三个短语的缩写。BASE 理论是对 CAP 中一致性和可用性权衡的结果，是基于 CAP 定理逐步演化而来的。BASE 理论的核心思想是：即使无法做到强一致性，但每个应用都可以根据自身业务特点，采用适当的方式来使系统达到最终一致性。
 
-<div align="center"> <img src="../pics//5930aeb8-847d-4e9f-a168-9334d7dec744.png" width="250"/> </div><br>
+<div align="center"> <img src="../../pics//5930aeb8-847d-4e9f-a168-9334d7dec744.png" width="250"/> </div><br>
 
 ## 基本可用
 
@@ -201,7 +201,7 @@ ACID 是传统数据库系统常用的设计理论，追求强一致性模型。
 
 从下图可以看出，DNS 在对域名解析时不再向用户返回源服务器的 IP 地址，而是返回边缘节点的 IP 地址，所以用户最终访问的是边缘节点。边缘节点会先从源服务器中获取用户所需的数据，如果请求成功，边缘节点会将页面缓存下来，下次用户访问时可以直接读取。
 
-<div align="center"> <img src="../pics//dbd60b1f-b700-4da6-a993-62578e892333.jpg"/> </div><br>
+<div align="center"> <img src="../../pics//dbd60b1f-b700-4da6-a993-62578e892333.jpg"/> </div><br>
 
 # 参考资料
 
