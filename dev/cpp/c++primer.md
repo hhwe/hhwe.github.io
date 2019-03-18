@@ -125,6 +125,36 @@ const int const *pc3;   // 指向常量的指针常量
 constexpr int mf = 20;  // c++11声明constexpr类型表示常量表达式
 ```
 
+### 处理类型
 
+１、类型别名
 
+``` c++
+// typedef 类型别名，using　别名声明
+typedef unsigned int uint;
+using SI = Sales_item;
 
+typedef char *pstring;
+const pstring cstr = 0; // cstr指向char的常量指针
+const pstring *ps;      // ps是一个指针，指向char常量指针
+// 在理解用类型别名的声明语句时，千万不要用类型别名替换
+const char *cstr = 0;   // 错误，变成指向常量的指针了
+```
+
+２、auto类型
+
+C++11新标准引入auto类型说明符
+
+``` c++
+auto item = vall + val2;    // 由相加结果推断item类型
+int i = 0, &r = i;
+auto a = r;     // a是一个整数，i
+// auto会忽略顶层const，保留底层const
+const int ci = i;
+auto d = ci;    // d是一个整数
+auto e = &ci;   // e是一个指向常量的指针
+const auto f = ci;  // 需要明确指明const
+auto &h = 42;   // 错误，非常量引用不能绑定字面值
+const auto &j = 42；   
+
+```
