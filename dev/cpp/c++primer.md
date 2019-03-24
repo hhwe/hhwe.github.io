@@ -263,5 +263,32 @@ while (getline(cin, line))
 
 - empty 和 size
 
-empty函数根据stirng对象是否为空返回一个布尔值，size函数返回string对象长度
+empty函数根据stirng对象是否为空返回一个布尔值，size函数返回string对象长度，返回类型是string::size_tye是一种无符号类型，size最好不要使用int
 
+- 比较 string 对象
+
+string 类定义了几种比较字符串运算符，并且大小写敏感，依照字典顺序：
+
+1. 如果两个string对象长度不同，而且较短string对象每个字符都相同，较短的小于较长的
+2. 如果两个string对象对应位置不一致，则string对象第一对相异字符比较结果
+
+- string 相加
+
+将左侧对象与右侧对象拼接而成，是一个新的string对象
+
+``` c++ 
+string s1 = "hello", s2 = "world";
+string s3 = s1 + s2;                // 两个string对象想加
+string s4 = s1 + ", ";              // string对象和字面量相加
+string s5 = "hello" + ", ";         // 错误，必须确保至少一个是string对象
+string s6 = (s1 + ", ") + "world";  // s1+", "返回的是一个string对象
+stirng s7 = "hello" + ", ", + s2;   // 错误，字面量不能直接相加
+```
+
+**为了与c兼容，c++的字符串字面值并不是string对象**
+
+3、处理 string 对象中的字符
+
+使用for循环处理sttring对象每个字符，使用下标运算符`[]`访问特定位置，接收参数也是string::size_type，也可以使用迭代器。同时配合cctype库进行处理
+
+### 3.3 标准库类型 vector
