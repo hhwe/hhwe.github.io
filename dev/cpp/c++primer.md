@@ -1,12 +1,16 @@
-## C++基础
+# C++Primer
 
-### 基本内置类型
+## 第1章 开始
+
+## 第2章 变量和基本类型
+
+### 2.1 基本内置类型
 
 有符号和无符号一起运算的时候，会转换成无符号数。`char`和`signed char`并不一样，具体由编译器决定是首位是有符号还是无符号
 
 **避免无法预知和依赖于实现环境的行为**
 
-### 变量
+### 2.2 变量
 
 变量的定义包括一个基本数据类型和一组声明符，C++的对象是指一块能存储数据并具有某种数据类型的内存空间
 
@@ -55,7 +59,7 @@ extern double pi = 3.14;    // 定义pi，任意的包含显示初始化的声�
 
 可以使用作用域操作符来提取覆盖默认的作用域规则，如　`::` 操作符
 
-### 复合类型
+### 2.3 复合类型
 
 基于其他类型定义的类型。
 
@@ -103,7 +107,7 @@ int* pl;    // 如果要强调是复合类型，每个变量定义一行
 
 **面对一条复杂的指针或引用的声明语句时，从右向左阅读有助于弄清楚他的真实含义**
 
-### const 限定符
+### 2.4 const 限定符
 
 const定义的常量的值不能改变，一旦创建后其值就不能改变，必须初始化
 
@@ -123,9 +127,10 @@ const int const *pc3;   // 指向常量的指针常量
 
 // 常量表达式值不会改变并且在编译过程中就能得到计算结果的表达式
 constexpr int mf = 20;  // c++11声明constexpr类型表示常量表达式
+constexpr int limit = mf + 1;
 ```
 
-### 处理类型
+### 2.5 处理类型
 
 １、类型别名
 
@@ -156,5 +161,107 @@ auto e = &ci;   // e是一个指向常量的指针
 const auto f = ci;  // 需要明确指明const
 auto &h = 42;   // 错误，非常量引用不能绑定字面值
 const auto &j = 42；   
-
 ```
+
+3、decltype类型指示符
+
+``` c++
+decltype(f()) sum = x;    // 由相加结果推断item类型
+int i = 0, &r = i;
+auto a = r;     // a是一个整数，i
+// auto会忽略顶层const，保留底层const
+const int ci = i;
+auto d = ci;    // d是一个整数
+auto e = &ci;   // e是一个指向常量的指针
+const auto f = ci;  // 需要明确指明const
+auto &h = 42;   // 错误，非常量引用不能绑定字面值
+const auto &j = 42；   
+```
+
+### 2.6 自定义数据结构
+
+1、类
+
+``` c++
+struct Sales_data {
+    std::string bookNo; // 默认初始化为对应类型零值
+    unsigned units_sold = 0;    // c++11类内初始化
+    double revenue = 0.0;
+};
+```
+
+## 第3章 字符串、向量和数组
+
+### 3.1 命名空间的 using 声明
+
+using声明可以可函数的域操作符简化，直接使用声明符
+
+``` c++
+using namespace::name;
+```
+
+这样我们就可以直接使用name变量名，而不需要命名空间的前缀，且每个名字都需要单独的using声明
+
+``` c++
+#include <iostream>
+using std::cin;
+int main() 
+{
+    int i;
+    cin >> i;       // cin和std::cin含义相同
+    cout << i;      // 错误，没有using声明，必须完整名字
+    std::cout <<i;  // 显示使用std中的cout
+    std::cin >> i;  // 显示使用std中的cin
+    return 0;
+}
+```
+
+**头文件不应包含using声明**
+
+接下来的的代码中的 `#include` 和 `using` 都省略
+
+### 3.2 标准库类型 string
+
+1、定义和初始化
+
+标准库类型 string 表示可变长字符序列，使用前必须包含 string 头文件。作为标准库一部分，string 定义在命名空间std中
+
+``` c++ 
+string s1;              // 空字符串
+string s2 = s1;         // s2是s1的副本，拷贝初始化
+string s2(s1);          // 同上，直接初始化
+string s3 = "value";    // s3是字符串字面值的副本，拷贝初始化
+string s3("value");     // 同上，直接初始化
+string s4(10, 'c');     // cccccccccc，直接初始化
+```
+
+2、操作
+
+- 读写 string 对象
+
+string 对象会自动忽略开头的空白，直到下一处空白为止
+
+``` c++ 
+string word;
+while (cin >> word) 
+{
+    cout << word << endl;
+}
+```
+
+- getline 读取一整行
+
+getline 从输入流中读入内容，直到换行符为止(注意换行符也读进来了)
+
+``` c++ 
+string line;
+while (getline(cin, line)) 
+{
+    cout << line << endl;
+}
+```
+
+- empty 和 size
+
+empty函数根据stirng对象是否为空返回一个布尔值，size函数返回string对象长度
+
