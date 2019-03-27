@@ -222,9 +222,14 @@ int main()
 
 ### 3.2 标准库类型 string
 
-1、定义和初始化
-
 标准库类型 string 表示可变长字符序列，使用前必须包含 string 头文件。作为标准库一部分，string 定义在命名空间std中
+
+``` c++
+#include <string>
+using std::string;
+```
+
+1、定义和初始化
 
 ``` c++ 
 string s1;              // 空字符串
@@ -251,7 +256,7 @@ while (cin >> word)
 
 - getline 读取一整行
 
-getline 从输入流中读入内容，直到换行符为止(注意换行符也读进来了)
+getline 从输入流中读入内容，直到换行符为止（注意换行符也读进来了），然后所读内容存到string对象中（注意不存换行符）
 
 ``` c++ 
 string line;
@@ -263,7 +268,7 @@ while (getline(cin, line))
 
 - empty 和 size
 
-empty函数根据stirng对象是否为空返回一个布尔值，size函数返回string对象长度，返回类型是string::size_tye是一种无符号类型，size最好不要使用int
+empty函数根据stirng对象是否为空返回一个布尔值，size函数返回string对象长度，返回类型是string::size_type是一种无符号类型，size最好不要使用int
 
 - 比较 string 对象
 
@@ -292,3 +297,31 @@ stirng s7 = "hello" + ", ", + s2;   // 错误，字面量不能直接相加
 使用for循环处理sttring对象每个字符，使用下标运算符`[]`访问特定位置，接收参数也是string::size_type，也可以使用迭代器。同时配合cctype库进行处理
 
 ### 3.3 标准库类型 vector
+
+标准库类型 vector 表示对象的集合，其中所有对象的类型都相同。也被称为容器
+
+``` c++ 
+#include <vector>
+using std::vector;
+```
+
+1、定义和初始化
+
+``` c++ 
+vector<T> v1            // 空的vector，元素T类型，默认初始化
+vector<T> v2(v1)        // v2包含v1所有元素副本
+vector<T> v2 = v1       // 同上
+vector<T> v3(n, val)    // v3包含n个重复元素，每个值都是val
+vector<T> v4(n)         // v4包含n个重复执行初始化元素
+vector<T> v5{a,b,c....} // v5包含初始值元素，每个元素赋予初始值
+vector<T> v5={a,b,c...} // 同上
+
+vector<int> ivec;           
+vector<int> ivec2(ivec);
+vector<string> svec<ivec2>; // 错误
+```
+
+2、操作
+
+- 添加元素
+
