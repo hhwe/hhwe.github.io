@@ -318,10 +318,45 @@ vector<T> v5={a,b,c...} // 同上
 
 vector<int> ivec;           
 vector<int> ivec2(ivec);
-vector<string> svec<ivec2>; // 错误
+vector<string> svec(ivec2); // 错误，svec元素是string，ivec2是int
+
+// 如果初始化使用列表初始化，但是又不能用来列表初始化，
+// 就要考虑这样的值来构造vector对象
+vector<string> v6{10};          // v6有10个默认初始化的元素
+vector<string> v7{10， "hi"};   // v7有10个值为"hi"的元素
 ```
 
 2、操作
 
 - 添加元素
 
+``` c++ 
+vector<int> v2;
+for (int i = 0; i != 100; ++i) 
+    v2.push_back(i); 
+```
+
+**vector对象能高效增长，最好创建空的vector对象，运行时动态添加元素
+
+- 其他 vector 操作
+
+``` c++ 
+vector<int> v;
+v.empty()       // 判断是否为空
+v.size()        // 元素的个数
+v.push_back(t)  // 添加值为 t 的元素
+v[n]            // 返回第 n 个位置上元素的引用
+v1 = v2         // 用 v2 中的元素拷贝替换 v1 中元素
+v1 = {a,b,c...} // 用列表中的元素拷贝替换 v1 中元素
+v1 == v2        // v1 和 v2 相等且仅当他们元素数量相同对应位置元素值相同
+<, <=, >, >=    // 以字典顺序进行比较
+// 访问 vector 对象中元素
+vector<int> v2{1,2,3,4,5,6,7,8,9};
+for (auto &i: v)
+    i *= i;
+for (auto i: v)
+    cout << i << " " << endl;
+```
+
+vector 和 string 很多功能都是相似的, 其中size返回的是vector中的size_type类型: vector<int>::size_type. vector 对象 以及 string 对象的下标运算符只能用于访问以及存在的元素, 而不能添加元素, 这种错误不会被编译器发现, 而是在运行时产生一个不可预知的值.    
+ 
